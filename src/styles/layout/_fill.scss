@@ -1,0 +1,53 @@
+.section__fill {
+  border-top: solid 1px $white-two;
+  border-bottom: solid 1px $white-two;
+  .fill__form {
+    display: flex;
+    flex-direction: column;
+    color: $dark-green-blue;
+    font-family: $font-open;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 30px;
+    margin-top: 5px;
+    .form__label {
+      margin-top: 20px;
+      margin-bottom: 7px;
+    }
+    .form__input {
+      border: $hospital-green solid 1px;
+      padding-left: 10px;
+      height: 30px;
+    }
+    ::placeholder {
+      color: $color-placeholder;
+    }
+    .action__hiddenField {
+      display: none;
+    }
+    .choose__image--button {
+      color: $color-white;
+      background-color: $dull-orange;
+      font-family: $font-open;
+      font-size: 14px;
+      line-height: 20px;
+      border: none;
+      width: 140px;
+      height: 30px;
+      margin-right: 20px;
+      padding: 3px 22px 7px;
+      border-radius: 3px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    }
+    .form__choose--image {
+      display: flex;
+      flex-direction: row;
+      .choose__image--preview {
+        border: $hospital-green solid 1px;
+        background-color: $color-white;
+        width: 30px;
+        background-size: cover;
+      }
+    }
+  }
+}

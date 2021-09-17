@@ -1,0 +1,37 @@
+.cards {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 91%,
+    rgba(245, 245, 245, 1) 100%
+  );
+  @media all and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 22% 60% 18%;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 0;
+  }
+
+  @media all and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+
+  .profilecards__section--design {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .section__fill {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .profilecards__section--share {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .hidden {
+    display: none;
+  }
+}

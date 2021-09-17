@@ -1,0 +1,100 @@
+.profilecards__section--share {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-bottom: solid 1px $white-two;
+  margin: 27px 20px 30px 20px;
+  text-transform: uppercase;
+  font-family: $font-open;
+  color: $color-texts;
+  font-size: 18px;
+  font-weight: 600;
+  box-sizing: border-box;
+  @media all and (min-width: 768px) {
+    padding: 0px 30px 0px 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .share {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: $dull-orange;
+  }
+
+  .share__title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .fa-chevron-up {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    text-align: right;
+  }
+
+  .fa-address-card {
+    margin-right: 9px;
+  }
+  .share__button {
+    background-color: $dull-orange;
+    width: 199px;
+    height: 50px;
+    border-radius: 12px;
+    font-family: $font-open;
+    color: $color-white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-style: none;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    justify-self: center;
+    margin-bottom: 30px;
+    transition: background-color 0.5s ease;
+  }
+  .share__button:active {
+    background-color: $light-grey-blue;
+    color: $white-two;
+  }
+}
+
+.container-creadted-card {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  .paragraph-created-card {
+    font-family: $font-open;
+    font-size: 18px;
+    color: $gunmetal;
+    text-transform: none;
+    margin-bottom: 5px;
+  }
+  .link-created-card {
+    color: $dull-orange;
+    font-family: $font-open;
+
+    font-size: 12px;
+    text-transform: none;
+    width: 290px;
+  }
+  .button-twitter {
+    background-color: $azure;
+    color: $white-two;
+    font-family: $font-open;
+    font-size: 14px;
+    border-radius: 3px;
+    border-style: none;
+    width: 181px;
+    height: 30px;
+    margin: 5px 0 30px 0;
+    .twitter {
+      color: $white-two;
+      padding-right: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.hidden {
+  display: none;
+}
