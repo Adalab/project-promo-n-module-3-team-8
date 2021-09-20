@@ -3,8 +3,23 @@ import '../styles/main.scss';
 import logo from '../images/logo-adalab.png';
 import logoAwesome from '../images/logo-awesome-profile-cards.svg';
 import stars from '../images/stars.gif';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [collapsable, setCollapsable] = useState('hidden');
+  const handleClick = (event) => {
+    console.log(event.currentTarget);
+    //Revisar y pedir soporte: 
+    //¿podríamos usar el bucle for?
+    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
+    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
+    if (collapsable === '') {
+      setCollapsable('hidden');
+    }
+    else {
+      setCollapsable('');
+    }
+  }
   return (
     <div className="App">
       <header className="header__cards">
@@ -69,7 +84,7 @@ function App() {
 
         <form className="profilecards__app" action="#" method="POST">
           <section className="profilecards__section--design">
-            <div className="form__header">
+            <div className="form__header" onClick={handleClick}>
               <div className="header--text">
                 <i className="far fa-object-ungroup icon-start"></i>
                 <h2 className="header--title">Diseña</h2>
@@ -78,7 +93,7 @@ function App() {
             </div>
 
 
-            <fieldset className="design__form js_fieldset hidden">
+            <fieldset className={`design__form js_fieldset ${collapsable}`}>
               <h3 className="design__form--colors">colores:</h3>
               <div className="design__form--ranges">
                 <label className="label-1" htmlFor="1">
@@ -106,7 +121,7 @@ function App() {
           </section>
 
           <section className="section__fill">
-            <div className="form__header">
+            <div className="form__header" onClick={handleClick}>
               <div className="header--text">
                 <i className="far fa-keyboard icon-start"></i>
                 <h2 className="header--title">Rellena</h2>
@@ -114,7 +129,7 @@ function App() {
               <i className="fas fa-chevron-up icon-end js_collapsable"></i>
             </div>
 
-            <fieldset className="fill__form js_fieldset hidden">
+            <fieldset className={`fill__form js_fieldset ${collapsable}`}>
               <label className="form__label" htmlFor="name">Nombre completo</label>
               <input
                 className="form__input js_name"
@@ -184,7 +199,7 @@ function App() {
             </fieldset>
           </section>
 
-          <div className="form__header">
+          <div className="form__header" onClick={handleClick}>
             <div className="header--text">
               <i className="fas fa-share-alt icon-start"></i>
               <h2 className="header--title">Comparte</h2>
@@ -193,7 +208,7 @@ function App() {
           </div>
 
 
-          <fieldset className="profilecards__section--share js_fieldset">
+          <fieldset className={`profilecards__section--share js_fieldset ${collapsable}`}>
             <button className="share__button js_share__button">
               <a href="./profile-cards.html" className="section__container--main-link"
               ><i className="far fa-address-card"></i>Crear tarjeta
