@@ -39,25 +39,25 @@ function App() {
               style={{ backgroundImage: `url(${stars})` }}
             ></div>
             <nav className="hero__section--media">
-              <a href="" className="js_preview"
+              <a href="www.adalab.es" className="js_preview"
               ><i
                 className="fas fa-mobile-alt js-icon icon color3 js_input_mobile"
                 id="mobile"
               ></i
                 ></a>
-              <a href="" className="js_preview"
+              <a href="www.gmail.com" className="js_preview"
               ><i
                 className="far fa-envelope js-icon icon color3 js_input_email"
                 id="email"
               ></i
                 ></a>
-              <a href="" className="js_preview"
+              <a href="www.linkedin.com" className="js_preview"
               ><i
                 className="fab fa-linkedin-in js-icon icon color3 js_input_linkedin"
                 id="linkedin"
               ></i
                 ></a>
-              <a href="" target="_blank" className="js_preview"
+              <a href="www.github.com/" target="_blank" className="js_preview"
               ><i
                 className="fab fa-github-alt js-icon icon color3 js_input_github"
                 id="github"
@@ -211,6 +211,16 @@ function App() {
               >
               <button className="button-twitter">
                 <i className="fab fa-twitter twitter"></i>Compartir en twitter
+              </button>
+              {/* Boton de linkedin */}
+              <a
+                className="link-created-card js_link_created"
+                target="_blank"
+                href="www.linkedin.com/"
+              >www.linkedin.com//loquesea/lpomnn/lllammnuiv</a
+              >
+              <button className="button-twitter">
+                <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
               </button>
             </div>
           </fieldset>
