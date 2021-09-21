@@ -39,6 +39,15 @@
       border-radius: 3px;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     }
+    
+    .choose__image--button:hover {
+      background-color: $light-grey-blue;
+      color: $rusty-red;
+      height: 40px;
+      width: 160px;
+      transition: 0.8s ease;
+    }
+
     .form__choose--image {
       display: flex;
       flex-direction: row;
