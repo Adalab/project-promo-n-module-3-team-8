@@ -7,6 +7,69 @@ import { useState } from 'react';
 
 const App = () => {
   const [collapsable, setCollapsable] = useState('hidden');
+  //FORMULARIO
+  const [data, setData] = useState({ 
+    name:'',
+    job: '',
+    tel:'',
+    email: '',
+    linkedin:'',
+    github:'',
+  });
+
+const handleInput=(event)=>{
+  const whichIput= event.currentTarget.name;
+
+  if(whichIput==='name'){
+    setData({
+      ...data,
+      name:event.currentTarget.value,
+    });
+
+  }
+  else if(whichIput==='job'){
+    setData({
+      ...data,
+      job:event.currentTarget.value,
+    });
+  } else if(whichIput==='tel'){
+    setData({
+      ...data,
+      tel:event.currentTarget.value,
+    });
+}else if(whichIput==='email'){
+  setData({
+    ...data,
+    email:event.currentTarget.value,
+  });
+}else if(whichIput==='linkedin'){
+  setData({
+    ...data,
+    linkedin:event.currentTarget.value,
+  });
+}
+else if(whichIput==='github'){
+  setData({
+    ...data,
+    github:event.currentTarget.value,
+  });
+}
+}
+
+let nameToDisplay;
+if(data.name===''){
+  nameToDisplay='Nombre Apellido';
+}else{
+  nameToDisplay= data.name;
+}
+let jobToDisplay;
+if(data.job===''){
+  jobToDisplay='Front-end developer';
+}else{
+  jobToDisplay= data.job;
+}
+
+//COLAPSABLE
   const handleClick = (event) => {
     console.log(event.currentTarget);
     //Revisar y pedir soporte: 
@@ -18,8 +81,9 @@ const App = () => {
     }
     else {
       setCollapsable('');
-    }
-  }
+     }
+
+   }
   return (
     <div className="App">
       <header className="header__cards">
@@ -42,10 +106,10 @@ const App = () => {
             <article className="hero__section--article">
               <div className="hero__section--article--rectangle js-rectangle"></div>
               <h2 className="hero__section--article--name js_preview js-name">
-                Nombre apellido
+                {nameToDisplay}
               </h2>
               <p className="hero__section--article--text js_preview js_preview-job">
-                Front-end developer
+                {jobToDisplay}
               </p>
             </article>
 
@@ -54,25 +118,25 @@ const App = () => {
               style={{ backgroundImage: `url(${stars})` }}
             ></div>
             <nav className="hero__section--media">
-              <a href="" className="js_preview"
+              <a href={"tel:"+ data.tel} className="js_preview"
               ><i
                 className="fas fa-mobile-alt js-icon icon color3 js_input_mobile"
                 id="mobile"
               ></i
                 ></a>
-              <a href="" className="js_preview"
+              <a href={"mailto:"+ data.email} className="js_preview" target="_blank"
               ><i
                 className="far fa-envelope js-icon icon color3 js_input_email"
-                id="email"
+                id="email" 
               ></i
                 ></a>
-              <a href="" className="js_preview"
+              <a href={"https://linkedIn.com/in/" + data.linkedin} className="js_preview" target="_blank"
               ><i
                 className="fab fa-linkedin-in js-icon icon color3 js_input_linkedin"
                 id="linkedin"
               ></i
                 ></a>
-              <a href="" target="_blank" className="js_preview"
+              <a href={"https://github.com/" + data.github}  className="js_preview" target="_blank"
               ><i
                 className="fab fa-github-alt js-icon icon color3 js_input_github"
                 id="github"
@@ -137,6 +201,8 @@ const App = () => {
                 id="name"
                 type="text"
                 name="name"
+                value={data.name} 
+                onChange={handleInput}
               />
               <label className="form__label" htmlFor="job">Puesto</label>
               <input
@@ -145,6 +211,8 @@ const App = () => {
                 id="job"
                 type="text"
                 name="job"
+                value={data.job}
+                onChange={handleInput}
               />
               <label className="form__label" htmlFor="">Imagen de perfil</label>
               <div className="form__choose--image">
@@ -153,6 +221,7 @@ const App = () => {
                   form="fill__form"
                   name="photo"
                   htmlFor="photo"
+                  
                 >
                   Añadir imagen
                 </label>
@@ -161,6 +230,7 @@ const App = () => {
                   type="file"
                   id="photo"
                   className="action__hiddenField js__profile-upload-btn"
+                  onChange={handleInput}
                 />
                 <div className="choose__image--preview js__profile-preview"></div>
               </div>
@@ -171,6 +241,7 @@ const App = () => {
                 id="email"
                 type="email"
                 name="email"
+                onChange={handleInput}
               />
               <label className="form__label" htmlFor="phone">Teléfono</label>
               <input
@@ -179,6 +250,8 @@ const App = () => {
                 id="phone"
                 type="tel"
                 name="phone"
+                
+                onChange={handleInput}
               />
               <label className="form__label" htmlFor="linkedin">Linkedin</label>
               <input
@@ -187,6 +260,8 @@ const App = () => {
                 id="linkedin"
                 type="text"
                 name="linkedin"
+                onChange={handleInput}
+                
               />
               <label className="form__label" htmlFor="github">Github</label>
               <input
@@ -195,6 +270,8 @@ const App = () => {
                 id="github"
                 type="text"
                 name="github"
+                onChange={handleInput}
+               
               />
             </fieldset>
           </section>
@@ -240,7 +317,7 @@ const App = () => {
         <a
           href="https://adalab.es/"
           title="Go to the website of Adalab"
-          target="_blank"
+          target= "_blank"
         >
           <img
             src={logo}
