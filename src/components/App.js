@@ -304,6 +304,16 @@ if(data.job===''){
               <button className="button-twitter">
                 <i className="fab fa-twitter twitter"></i>Compartir en twitter
               </button>
+              {/* Boton de linkedin */}
+              <a
+                className="link-created-card js_link_created"
+                target="_blank"
+                href="www.linkedin.com/"
+              >www.linkedin.com//loquesea/lpomnn/lllammnuiv</a
+              >
+              <button className="button-twitter">
+                <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
+              </button>
             </div>
           </fieldset>
 
