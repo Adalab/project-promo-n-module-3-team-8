@@ -50,9 +50,9 @@
     margin-bottom: 30px;
     transition: background-color 0.5s ease;
   }
-  .share__button:active {
+  .share__button:hover {
     background-color: $light-grey-blue;
-    color: $white-two;
+    color: $rusty-red;
   }
 }
 

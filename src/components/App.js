@@ -301,8 +301,18 @@ if(data.job===''){
                 href="www.twwitter.com"
               >www.twwitter.com/loquesea/lpomnn/lllammnuiv</a
               >
-              <button className="button-twitter">
+              <button className="button-rrss">
                 <i className="fab fa-twitter twitter"></i>Compartir en twitter
+              </button>
+              {/* Boton de linkedin */}
+              <a
+                className="link-created-card js_link_created"
+                target="_blank"
+                href="www.linkedin.com/"
+              >www.linkedin.com//loquesea/lpomnn/lllammnuiv</a
+              >
+              <button className="button-rrss">
+                <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
               </button>
             </div>
           </fieldset>
