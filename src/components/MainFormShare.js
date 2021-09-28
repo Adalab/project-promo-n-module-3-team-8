@@ -20,7 +20,7 @@ const Share = () => {
 
   return (
     <>
-      <div className="form__header" onClick={handleClick}>
+      <div className="form__header" >
         <div className="header--text">
           <i className="fas fa-share-alt icon-start"></i>
           <h2 className="header--title">Comparte</h2>
@@ -29,7 +29,7 @@ const Share = () => {
       </div>
 
       <fieldset
-        className={`profilecards__section--share js_fieldset ${collapsable}`}
+        className={`profilecards__section--share js_fieldset `}
       >
         <button className="share__button js_share__button">
           <a

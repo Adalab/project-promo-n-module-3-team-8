@@ -2,27 +2,14 @@
 //import '../styles/layout/fill.scss';
 //import '../styles/layout/header-collapsable.scss';
 
-const Fill = () => {
- 
- 
-//FORMULARIO
+const Fill = (props) => {
+  const handleInput=(event)=>{
+    props.handleInput(event.target.value)
+  }
   
-  //COLAPSABLE
-  const handleClick = (event) => {
-    console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-    if (collapsable === '') {
-      setCollapsable('hidden');
-    } else {
-      setCollapsable('');
-    }
-  };
   return (
     <section className="section__fill">
-      <div className="form__header" onClick={handleClick}>
+      <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
           <h2 className="header--title">Rellena</h2>
@@ -30,7 +17,7 @@ const Fill = () => {
         <i className="fas fa-chevron-up icon-end js_collapsable"></i>
       </div>
 
-      <fieldset className={`fill__form js_fieldset ${collapsable}`}>
+      <fieldset className={`fill__form js_fieldset `}>
         <label className="form__label" htmlFor="name">
           Nombre completo
         </label>

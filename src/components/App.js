@@ -58,7 +58,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Main data = {data}/>
+      <Main data = {data} handleInput={handleInput}/>
       <Footer />
     </div>
   );
