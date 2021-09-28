@@ -1,11 +1,11 @@
 import Form from './MainForm';
 import Preview from './MainPreview';
 
-const Main = () => {
+const Main = (props) => {
   return (
     <main className="cards">
-      <Preview />
-      <Form />
+      <Preview data = {props.data}/>
+      <Form data = {props.data}/>
     </main>
   );
 };

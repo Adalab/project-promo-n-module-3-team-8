@@ -4,7 +4,7 @@ import Share from './MainFormShare';
 //import '../styles/pages/main-cards.scss';
 //import '../styles/pages/main-landing.scss';
 
-const Form = () => {
+const Form = (props) => {
   return (
     <form className="profilecards__app" action="#" method="POST">
       <Design />

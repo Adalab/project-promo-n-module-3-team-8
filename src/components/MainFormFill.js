@@ -1,55 +1,12 @@
-import { useState } from 'react';
+
 //import '../styles/layout/fill.scss';
 //import '../styles/layout/header-collapsable.scss';
 
 const Fill = () => {
-  const [collapsable, setCollapsable] = useState('hidden');
-  const [data, setData] = useState({
-    name: '',
-    job: '',
-    tel: '',
-    email: '',
-    linkedin: '',
-    github: '',
-  });
-
-  //FORMULARIO
-  const handleInput = (event) => {
-    const whichIput = event.currentTarget.name;
-
-    if (whichIput === 'name') {
-      setData({
-        ...data,
-        name: event.currentTarget.value,
-      });
-    } else if (whichIput === 'job') {
-      setData({
-        ...data,
-        job: event.currentTarget.value,
-      });
-    } else if (whichIput === 'tel') {
-      setData({
-        ...data,
-        tel: event.currentTarget.value,
-      });
-    } else if (whichIput === 'email') {
-      setData({
-        ...data,
-        email: event.currentTarget.value,
-      });
-    } else if (whichIput === 'linkedin') {
-      setData({
-        ...data,
-        linkedin: event.currentTarget.value,
-      });
-    } else if (whichIput === 'github') {
-      setData({
-        ...data,
-        github: event.currentTarget.value,
-      });
-    }
-  };
-
+ 
+ 
+//FORMULARIO
+  
   //COLAPSABLE
   const handleClick = (event) => {
     console.log(event.currentTarget);
@@ -83,7 +40,7 @@ const Fill = () => {
           id="name"
           type="text"
           name="name"
-          value={data.name}
+          value={props.data.name}
           onChange={handleInput}
         />
         <label className="form__label" htmlFor="job">
@@ -95,7 +52,7 @@ const Fill = () => {
           id="job"
           type="text"
           name="job"
-          value={data.job}
+          value={props.data.job}
           onChange={handleInput}
         />
         <label className="form__label" htmlFor="">
