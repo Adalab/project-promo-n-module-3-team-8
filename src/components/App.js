@@ -10,6 +10,7 @@ import Footer from './Footer';
 //import '../styles/components/links.scss';
 
 const App = () => {
+  //COLLAPSABLE
    //Variables de estado para cada titulo
    const [ design, setDesign] = useState('');
    const [ fill, setFill ] = useState('hidden');
@@ -28,7 +29,7 @@ const App = () => {
        setDesign('');
        setFill('hidden');
        setShare('hidden');
-       setArrowDesign('rotateArrowUp');
+       setArrowDesign('icon-end--rotate');
        setArrowFill('');
        setArrowShare('');
      } else if (selected.id === 'collapseFill') {
@@ -36,7 +37,7 @@ const App = () => {
        setFill('');
        setShare('hidden');
        setArrowDesign('');
-       setArrowFill('rotateArrowUp');
+       setArrowFill('icon-end--rotate');
        setArrowShare('');
      } else if (selected.id === 'collapseShare') {
        setDesign('hidden');
@@ -44,9 +45,10 @@ const App = () => {
        setShare('');
        setArrowDesign('');
        setArrowFill('');
-       setArrowShare('rotateArrowUp');
+       setArrowShare('icon-end--rotate');
      }
    };
+   //FORMULARIO
   const [data, setData] = useState({
     name: '',
     job: '',
@@ -94,7 +96,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Main data = {data} handleInput={handleInput}/>
+      <Main data = {data} handleInput={handleInput} design={design} arrowDesign={arrowDesign} fill={fill} arrowfill={arrowFill} share={share} arrowShare={arrowShare} handleCollapsable={handleCollapsable}/>
       <Footer />
     </div>
   );

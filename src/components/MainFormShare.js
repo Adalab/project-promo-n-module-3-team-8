@@ -2,21 +2,23 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/share.scss';
 
- const Share = () => {
-  
+ const Share = (props) => {
+  const handleClick = (ev) => {
+    props.handleCollapsable(ev.currentTarget.id)
+  }
 
   return (
     <>
-      <div className="form__header" onClick={handleCollapsable} id='collapsableShare'>
+      <div className="form__header" onClick={handleClick} id='collapsableShare'>
         <div className="header--text">
           <i className="fas fa-share-alt icon-start"></i>
           <h2 className="header--title">Comparte</h2>
         </div>
-        <i className={`fas fa-chevron-down arrow ${arrowShare}`}></i>
+        <i className={`fas fa-chevron-down arrow ${props.arrowShare}`}></i>
       </div>
 
       <fieldset
-        className={`profilecards__section--share js_fieldset ${share}`}
+        className={`profilecards__section--share js_fieldset ${props.share}`}
       >
         <button className="share__button js_share__button">
           <a

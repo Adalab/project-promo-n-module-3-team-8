@@ -6,18 +6,21 @@ const Fill = (props) => {
   const handleInput=(event)=>{
     props.handleInput(event.target.value)
   }
+  const handleClick = (ev) => {
+    props.handleCollapsable(ev.currentTarget.id)
+  }
   
   return (
-    <section className="section__fill">
+    <section className="section__fill" onClick={handleClick} id="collapsableFil">
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
           <h2 className="header--title">Rellena</h2>
         </div>
-        <i className={`fas fa-chevron-down arrow ${arrowFill}`}></i>
+        <i className={`fas fa-chevron-down arrow ${props.arrowFill}`}></i>
       </div>
 
-      <fieldset className={`fill__form js_fieldset ${fill}`}>
+      <fieldset className={`fill__form js_fieldset ${props.fill}`}>
         <label className="form__label" htmlFor="name">
           Nombre completo
         </label>
