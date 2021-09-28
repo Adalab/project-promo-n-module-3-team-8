@@ -12,6 +12,44 @@ const Fill = () => {
     linkedin: '',
     github: '',
   });
+  //Variables de estado para cada titulo
+  const [ design, setDesign] = useState('');
+  const [ fill, setFill ] = useState('hidden');
+  const [ share, setShare]= useState('hidden');
+ 
+  //Variables de estado para las flechas 
+  const [ arrowDesign, setArrowDesign]= useState('');
+  const [ arrowFill, setArrowFill]= useState('');
+  const [ arrowShare, setArrowShare]= useState('');
+
+  //Función del evento de los collapsables
+  const handleCollapsable = (ev) => {
+    const selected = ev.currentTarget;
+    console.log(selected);
+    if (selected.id === 'collapseDesign') {
+      setDesign('');
+      setFill('hidden');
+      setShare('hidden');
+      setArrowDesign('rotateArrowUp');
+      setArrowFill('');
+      setArrowShare('');
+    } else if (selected.id === 'collapseFill') {
+      setDesign('hidden');
+      setFill('');
+      setShare('hidden');
+      setArrowDesign('');
+      setArrowFill('rotateArrowUp');
+      setArrowShare('');
+    } else if (selected.id === 'collapseShare') {
+      setDesign('hidden');
+      setFill('hidden');
+      setShare('');
+      setArrowDesign('');
+      setArrowFill('');
+      setArrowShare('rotateArrowUp');
+    }
+  };
+
 
   //FORMULARIO
   const handleInput = (event) => {
@@ -51,29 +89,29 @@ const Fill = () => {
   };
 
   //COLAPSABLE
-  const handleClick = (event) => {
-    console.log(event.currentTarget);
+  // const handleClick = (event) => {
+  //   console.log(event.currentTarget);
     //Revisar y pedir soporte:
     //¿podríamos usar el bucle for?
     //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
     //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-    if (collapsable === '') {
-      setCollapsable('hidden');
-    } else {
-      setCollapsable('');
-    }
-  };
+  //   if (collapsable === '') {
+  //     setCollapsable('hidden');
+  //   } else {
+  //     setCollapsable('');
+  //   }
+  // };
   return (
-    <section className="section__fill">
-      <div className="form__header" onClick={handleClick}>
+    <section className="section__fill" onClick={handleCollapsable} id='collapsableFill'>
+      <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
           <h2 className="header--title">Rellena</h2>
         </div>
-        <i className="fas fa-chevron-up icon-end js_collapsable"></i>
+        <i className={`fas fa-chevron-down arrow ${arrowFill}`}></i>
       </div>
 
-      <fieldset className={`fill__form js_fieldset ${collapsable}`}>
+      <fieldset className={`fill__form js_fieldset ${fill}`}>
         <label className="form__label" htmlFor="name">
           Nombre completo
         </label>
