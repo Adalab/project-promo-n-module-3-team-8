@@ -1,11 +1,15 @@
 import Form from './MainForm';
 import Preview from './MainPreview';
 
-const Main = () => {
+const Main = (props) => {
+  const handleInput=(event)=>{
+    props.handleInput(event.target.value)
+  }
+  
   return (
     <main className="cards">
-      <Preview />
-      <Form />
+      <Preview data = {props.data} />
+      <Form data = {props.data} handleInput={handleInput}/>
     </main>
   );
 };

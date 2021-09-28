@@ -3,58 +3,7 @@ import { useState } from 'react';
 //import '../styles/layout/share.scss';
 
  const Share = () => {
-   //Variables de estado para cada titulo
-  const [ design, setDesign] = useState('');
-  const [ fill, setFill ] = useState('hidden');
-  const [ share, setShare]= useState('hidden');
- 
-  //Variables de estado para las flechas 
-  const [ arrowDesign, setArrowDesign]= useState('');
-  const [ arrowFill, setArrowFill]= useState('');
-  const [ arrowShare, setArrowShare]= useState('');
-
-  //Función del evento de los collapsables
-  const handleCollapsable = (ev) => {
-    const selected = ev.currentTarget;
-    console.log(selected);
-    if (selected.id === 'collapseDesign') {
-      setDesign('');
-      setFill('hidden');
-      setShare('hidden');
-      setArrowDesign('rotateArrowUp');
-      setArrowFill('');
-      setArrowShare('');
-    } else if (selected.id === 'collapseFill') {
-      setDesign('hidden');
-      setFill('');
-      setShare('hidden');
-      setArrowDesign('');
-      setArrowFill('rotateArrowUp');
-      setArrowShare('');
-    } else if (selected.id === 'collapseShare') {
-      setDesign('hidden');
-      setFill('hidden');
-      setShare('');
-      setArrowDesign('');
-      setArrowFill('');
-      setArrowShare('rotateArrowUp');
-    }
-  };
-
-  //COLAPSABLE
-  // const [collapsable, setCollapsable] = useState('hidden');
-  // const handleClick = (event) => {
-  //   console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-  //   if (collapsable === '') {
-  //     setCollapsable('hidden');
-  //   } else {
-  //     setCollapsable('');
-  //   }
-  // };
+  
 
   return (
     <>

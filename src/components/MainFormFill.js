@@ -1,108 +1,14 @@
-import { useState } from 'react';
+
 //import '../styles/layout/fill.scss';
 //import '../styles/layout/header-collapsable.scss';
 
-const Fill = () => {
-  const [collapsable, setCollapsable] = useState('hidden');
-  const [data, setData] = useState({
-    name: '',
-    job: '',
-    tel: '',
-    email: '',
-    linkedin: '',
-    github: '',
-  });
-  //Variables de estado para cada titulo
-  const [ design, setDesign] = useState('');
-  const [ fill, setFill ] = useState('hidden');
-  const [ share, setShare]= useState('hidden');
- 
-  //Variables de estado para las flechas 
-  const [ arrowDesign, setArrowDesign]= useState('');
-  const [ arrowFill, setArrowFill]= useState('');
-  const [ arrowShare, setArrowShare]= useState('');
-
-  //Función del evento de los collapsables
-  const handleCollapsable = (ev) => {
-    const selected = ev.currentTarget;
-    console.log(selected);
-    if (selected.id === 'collapseDesign') {
-      setDesign('');
-      setFill('hidden');
-      setShare('hidden');
-      setArrowDesign('rotateArrowUp');
-      setArrowFill('');
-      setArrowShare('');
-    } else if (selected.id === 'collapseFill') {
-      setDesign('hidden');
-      setFill('');
-      setShare('hidden');
-      setArrowDesign('');
-      setArrowFill('rotateArrowUp');
-      setArrowShare('');
-    } else if (selected.id === 'collapseShare') {
-      setDesign('hidden');
-      setFill('hidden');
-      setShare('');
-      setArrowDesign('');
-      setArrowFill('');
-      setArrowShare('rotateArrowUp');
-    }
-  };
-
-
-  //FORMULARIO
-  const handleInput = (event) => {
-    const whichIput = event.currentTarget.name;
-
-    if (whichIput === 'name') {
-      setData({
-        ...data,
-        name: event.currentTarget.value,
-      });
-    } else if (whichIput === 'job') {
-      setData({
-        ...data,
-        job: event.currentTarget.value,
-      });
-    } else if (whichIput === 'tel') {
-      setData({
-        ...data,
-        tel: event.currentTarget.value,
-      });
-    } else if (whichIput === 'email') {
-      setData({
-        ...data,
-        email: event.currentTarget.value,
-      });
-    } else if (whichIput === 'linkedin') {
-      setData({
-        ...data,
-        linkedin: event.currentTarget.value,
-      });
-    } else if (whichIput === 'github') {
-      setData({
-        ...data,
-        github: event.currentTarget.value,
-      });
-    }
-  };
-
-  //COLAPSABLE
-  // const handleClick = (event) => {
-  //   console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-  //   if (collapsable === '') {
-  //     setCollapsable('hidden');
-  //   } else {
-  //     setCollapsable('');
-  //   }
-  // };
+const Fill = (props) => {
+  const handleInput=(event)=>{
+    props.handleInput(event.target.value)
+  }
+  
   return (
-    <section className="section__fill" onClick={handleCollapsable} id='collapsableFill'>
+    <section className="section__fill">
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
@@ -121,7 +27,7 @@ const Fill = () => {
           id="name"
           type="text"
           name="name"
-          value={data.name}
+          value={props.data.name}
           onChange={handleInput}
         />
         <label className="form__label" htmlFor="job">
@@ -133,7 +39,7 @@ const Fill = () => {
           id="job"
           type="text"
           name="job"
-          value={data.job}
+          value={props.data.job}
           onChange={handleInput}
         />
         <label className="form__label" htmlFor="">

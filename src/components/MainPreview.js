@@ -2,27 +2,19 @@ import stars from '../images/stars.gif';
 import { useState } from 'react';
 //import '../styles/layout/hero.scss';
 
-const Preview = () => {
-  const [data, setData] = useState({
-    name: '',
-    job: '',
-    tel: '',
-    email: '',
-    linkedin: '',
-    github: '',
-  });
-
+const Preview = (props) => {
+  
   let nameToDisplay;
-  if (data.name === '') {
+  if (props.data.name === '') {
     nameToDisplay = 'Nombre Apellido';
   } else {
-    nameToDisplay = data.name;
+    nameToDisplay = props.data.name;
   }
   let jobToDisplay;
-  if (data.job === '') {
+  if (props.data.job === '') {
     jobToDisplay = 'Front-end developer';
   } else {
-    jobToDisplay = data.job;
+    jobToDisplay = props.data.job;
   }
   return (
     <section className="hero">
@@ -45,14 +37,14 @@ const Preview = () => {
           style={{ backgroundImage: `url(${stars})` }}
         ></div>
         <nav className="hero__section--media">
-          <a href={'tel:' + data.tel} className="js_preview">
+          <a href={'tel:' + props.data.tel} className="js_preview">
             <i
               className="fas fa-mobile-alt js-icon icon color3 js_input_mobile"
               id="mobile"
             ></i>
           </a>
           <a
-            href={'mailto:' + data.email}
+            href={'mailto:' + props.data.email}
             className="js_preview"
             target="_blank"
           >
@@ -62,7 +54,7 @@ const Preview = () => {
             ></i>
           </a>
           <a
-            href={'https://linkedIn.com/in/' + data.linkedin}
+            href={'https://linkedIn.com/in/' + props.data.linkedin}
             className="js_preview"
             target="_blank"
           >
@@ -72,7 +64,7 @@ const Preview = () => {
             ></i>
           </a>
           <a
-            href={'https://github.com/' + data.github}
+            href={'https://github.com/' + props.data.github}
             className="js_preview"
             target="_blank"
           >
