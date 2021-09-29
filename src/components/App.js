@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import '../styles/main.scss';
 import Header from './Header';
-import Main from './Main';
 import Footer from './Footer';
+import Form from './MainForm';
+import Preview from './MainPreview';
 //import '../styles/main.scss';
 //import '../styles/core/reset.scss';
 //import '../styles/pages/index.scss';
@@ -58,7 +59,13 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Main data = {data}/>
+      <main className="cards">
+        <Preview data={data} />
+        <Form
+          data={data}
+          handleInput={handleInput}
+        />
+      </main>
       <Footer />
     </div>
   );

@@ -2,27 +2,25 @@
 //import '../styles/layout/fill.scss';
 //import '../styles/layout/header-collapsable.scss';
 
-const Fill = () => {
- 
- 
-//FORMULARIO
-  
-  //COLAPSABLE
-  const handleClick = (event) => {
-    console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-    if (collapsable === '') {
-      setCollapsable('hidden');
-    } else {
-      setCollapsable('');
-    }
-  };
+const Fill = (props) => {
+  //FORMULARIO
+
+  // //COLAPSABLE
+  // const handleClick = (event) => {
+  //   console.log(event.currentTarget);
+  //   //Revisar y pedir soporte:
+  //   //¿podríamos usar el bucle for?
+  //   //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
+  //   //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
+  //   if (collapsable === '') {
+  //     setCollapsable('hidden');
+  //   } else {
+  //     setCollapsable('');
+  //   }
+  // };
   return (
     <section className="section__fill">
-      <div className="form__header" onClick={handleClick}>
+      <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
           <h2 className="header--title">Rellena</h2>
@@ -30,7 +28,7 @@ const Fill = () => {
         <i className="fas fa-chevron-up icon-end js_collapsable"></i>
       </div>
 
-      <fieldset className={`fill__form js_fieldset ${collapsable}`}>
+      <fieldset className="fill__form">
         <label className="form__label" htmlFor="name">
           Nombre completo
         </label>
@@ -41,7 +39,7 @@ const Fill = () => {
           type="text"
           name="name"
           value={props.data.name}
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="job">
           Puesto
@@ -53,7 +51,7 @@ const Fill = () => {
           type="text"
           name="job"
           value={props.data.job}
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="">
           Imagen de perfil
@@ -72,7 +70,7 @@ const Fill = () => {
             type="file"
             id="photo"
             className="action__hiddenField js__profile-upload-btn"
-            onChange={handleInput}
+            onChange={props.handleInput}
           />
           <div className="choose__image--preview js__profile-preview"></div>
         </div>
@@ -85,7 +83,7 @@ const Fill = () => {
           id="email"
           type="email"
           name="email"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="phone">
           Teléfono
@@ -96,7 +94,7 @@ const Fill = () => {
           id="phone"
           type="tel"
           name="phone"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="linkedin">
           Linkedin
@@ -107,7 +105,7 @@ const Fill = () => {
           id="linkedin"
           type="text"
           name="linkedin"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="github">
           Github
@@ -118,7 +116,7 @@ const Fill = () => {
           id="github"
           type="text"
           name="github"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
       </fieldset>
     </section>

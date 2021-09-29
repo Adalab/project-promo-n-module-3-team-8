@@ -8,7 +8,11 @@ const Form = (props) => {
   return (
     <form className="profilecards__app" action="#" method="POST">
       <Design />
-      <Fill />
+      <Fill
+
+        data={props.data}
+        handleInput={props.handleInput}
+      />
       <Share />
     </form>
   );
