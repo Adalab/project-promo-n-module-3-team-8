@@ -31,7 +31,7 @@ const Fill = (props) => {
           type="text"
           name="name"
           value={props.data.name}
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="job">
           Puesto
@@ -43,7 +43,7 @@ const Fill = (props) => {
           type="text"
           name="job"
           value={props.data.job}
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="">
           Imagen de perfil
@@ -62,7 +62,7 @@ const Fill = (props) => {
             type="file"
             id="photo"
             className="action__hiddenField js__profile-upload-btn"
-            onChange={handleInput}
+            onChange={props.handleInput}
           />
           <div className="choose__image--preview js__profile-preview"></div>
         </div>
@@ -75,7 +75,7 @@ const Fill = (props) => {
           id="email"
           type="email"
           name="email"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="phone">
           Teléfono
@@ -86,7 +86,7 @@ const Fill = (props) => {
           id="phone"
           type="tel"
           name="phone"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="linkedin">
           Linkedin
@@ -97,7 +97,7 @@ const Fill = (props) => {
           id="linkedin"
           type="text"
           name="linkedin"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
         <label className="form__label" htmlFor="github">
           Github
@@ -108,7 +108,7 @@ const Fill = (props) => {
           id="github"
           type="text"
           name="github"
-          onChange={handleInput}
+          onChange={props.handleInput}
         />
       </fieldset>
     </section>
