@@ -11,7 +11,7 @@ const Fill = (props) => {
   }
   
   return (
-    <section className="section__fill" onClick={handleClick} id="collapsableFil">
+    <section className="section__fill" onClick={handleClick} id="collapsableFill">
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>

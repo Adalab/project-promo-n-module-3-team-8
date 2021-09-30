@@ -8,7 +8,7 @@ const Design = (props) => {
   }
   
   return (
-    <section className="profilecards__section--design" onClick={handleClick}  id='collapseDesign'>
+    <section className="profilecards__section--design" onClick={handleClick}  id='collapsableDesign'>
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-object-ungroup icon-start"></i>

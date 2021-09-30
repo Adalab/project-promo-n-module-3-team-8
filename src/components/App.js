@@ -11,7 +11,7 @@ import Preview from './MainPreview';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  const [design, setDesign] = useState('hidden');
+  const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
 
@@ -29,21 +29,21 @@ const App = () => {
   const handleCollapsable = (id) => {
     const selected = id;
     console.log(selected);
-    if (selected === 'collapseDesign') {
+    if (selected === 'collapsableDesign') {
       setDesign('');
       setFill('hidden');
       setShare('hidden');
       setArrowDesign('icon-end');
       setArrowFill('');
       setArrowShare('');
-    } else if (selected === 'collapseFill') {
+    } else if (selected === 'collapsableFill') {
       setDesign('hidden');
       setFill('');
       setShare('hidden');
       setArrowDesign('');
       setArrowFill('icon-end');
       setArrowShare('');
-    } else if (selected === 'collapseShare') {
+    } else if (selected === 'collapsableShare') {
       setDesign('hidden');
       setFill('hidden');
       setShare('');
@@ -96,7 +96,7 @@ const App = () => {
         <Form
           data={data}
           handleInput={handleInput}
-          stateDesign={design} arrowDesign={arrowDesign} stateFill={fill} arrowFill={arrowFill} stateShare={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} />
+          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} />
       </main>
       <Footer />
     </div>
