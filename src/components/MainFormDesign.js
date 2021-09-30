@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import Palette from './Palette';
 
 const Design = (props) => {

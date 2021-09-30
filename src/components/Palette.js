@@ -1,3 +1,4 @@
+
 const Palette = (props) => {
 
     return (

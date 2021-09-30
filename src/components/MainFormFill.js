@@ -1,15 +1,12 @@
 
-//import '../styles/layout/fill.scss';
-//import '../styles/layout/header-collapsable.scss';
-
 const Fill = (props) => {
-  const handleInput=(event)=>{
+  const handleInput = (event) => {
     props.handleInput(event.target.value)
   }
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
   }
-  
+
   return (
     <section className="section__fill" onClick={handleClick} id="collapsableFill">
       <div className="form__header" >

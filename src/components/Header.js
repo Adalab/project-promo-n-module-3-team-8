@@ -1,6 +1,4 @@
 import logoAwesome from '../images/logo-awesome-profile-cards.svg';
-//import '../styles/layout/header.scss';
-//import '../styles/layout/header-cards.scss';
 
 const Header = () => {
   return (

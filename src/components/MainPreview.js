@@ -1,9 +1,7 @@
 import stars from '../images/stars.gif';
-import { useState } from 'react';
-//import '../styles/layout/hero.scss';
 
 const Preview = (props) => {
-  
+
   let nameToDisplay;
   if (props.data.name === '') {
     nameToDisplay = 'Nombre Apellido';

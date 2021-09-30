@@ -1,8 +1,5 @@
-import { useState } from 'react';
-//import '../styles/layout/header-collapsable.scss';
-//import '../styles/layout/share.scss';
 
- const Share = (props) => {
+const Share = (props) => {
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
   }

@@ -4,11 +4,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Form from './MainForm';
 import Preview from './MainPreview';
-//import '../styles/main.scss';
-//import '../styles/core/reset.scss';
-//import '../styles/pages/index.scss';
-//import '../styles/core/variables.scss';
-//import '../styles/components/links.scss';
 
 const App = () => {
   const [design, setDesign] = useState('');
@@ -95,7 +90,7 @@ const App = () => {
         <Form
           data={data}
           handleInput={handleInput}
-          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} />
+          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare} handleCollapsable={handleCollapsable} />
       </main>
       <Footer />
     </div>

@@ -1,6 +1,4 @@
 import logo from '../images/logo-adalab.png';
-//import '../styles/layout/footer.scss';
-//import '../styles/components/transanimation.scss';
 
 const Footer = () => {
   return (
