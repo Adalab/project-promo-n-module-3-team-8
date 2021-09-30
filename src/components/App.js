@@ -54,7 +54,6 @@ const App = () => {
   };
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
-
     if (whichIput === 'name') {
       setData({
         ...data,
