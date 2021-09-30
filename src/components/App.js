@@ -33,7 +33,7 @@ const App = () => {
       setDesign('');
       setFill('hidden');
       setShare('hidden');
-      setArrowDesign('rotateArrowUp');
+      setArrowDesign('icon-end');
       setArrowFill('');
       setArrowShare('');
     } else if (selected === 'collapseFill') {
@@ -41,7 +41,7 @@ const App = () => {
       setFill('');
       setShare('hidden');
       setArrowDesign('');
-      setArrowFill('rotateArrowUp');
+      setArrowFill('icon-end');
       setArrowShare('');
     } else if (selected === 'collapseShare') {
       setDesign('hidden');
@@ -49,7 +49,7 @@ const App = () => {
       setShare('');
       setArrowDesign('');
       setArrowFill('');
-      setArrowShare('rotateArrowUp');
+      setArrowShare('icon-end');
     }
   };
   const handleInput = (event) => {
