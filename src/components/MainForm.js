@@ -2,6 +2,7 @@ import Design from './MainFormDesign';
 import Fill from './MainFormFill';
 import Share from './MainFormShare';
 //import '../styles/pages/main-cards.scss';
+//import '../styles/core/variables.scss';
 //import '../styles/pages/main-landing.scss';
 
 const Form = (props) => {

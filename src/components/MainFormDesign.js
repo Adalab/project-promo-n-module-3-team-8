@@ -2,6 +2,7 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/design.scss';
 
+
 const Design = () => {
   //COLAPSABLE
   const [collapsable, setCollapsable] = useState('hidden');

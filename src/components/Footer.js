@@ -11,7 +11,7 @@ const Footer = () => {
       <a
         href="https://adalab.es/"
         title="Go to the website of Adalab"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <img
           src={logo}
