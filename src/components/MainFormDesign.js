@@ -23,10 +23,12 @@ const Design = (props) => {
           <label className="label-1" htmlFor="1">
             <input
               className="range js_palette"
-              id="1"
+              id="palette1"
               type="radio"
-              value="1"
-              name="palette"
+              value="palette1"
+              name="palette" 
+              onChange={props.handlePalettes}
+              checked={props.palettes === "palette1"}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -36,10 +38,12 @@ const Design = (props) => {
           <label className="label-2" htmlFor="2">
             <input
               className="range js_palette"
-              id="2"
+              id="palette2"
               type="radio"
-              value="2"
+              value="palette2"
               name="palette"
+              onChange={props.handlePalettes}
+              checked={props.palettes === "palette2"}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -49,10 +53,12 @@ const Design = (props) => {
           <label className="label-3" htmlFor="3">
             <input
               className="range js_palette"
-              id="3"
+              id="palette3"
               type="radio"
-              value="3"
+              value="palette3"
               name="palette"
+              onChange={props.handlePalettes}
+              checked={props.palettes === "palette3"}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>

@@ -11,6 +11,8 @@ import Preview from './MainPreview';
 //import '../styles/components/links.scss';
 
 const App = () => {
+  //Variables de estado
+  //Para los collapsables
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
@@ -18,6 +20,9 @@ const App = () => {
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
+  //Para las paletas
+  const [palettes, setPalettes] = useState("palette1");
+  //Para el formulario
   const [data, setData] = useState({
     name: '',
     job: '',
@@ -26,6 +31,8 @@ const App = () => {
     linkedin: '',
     github: '',
   });
+  //Funciones manejadoras
+  //Para los collapsables
   const handleCollapsable = (id) => {
     const selected = id;
     console.log(selected);
@@ -52,9 +59,18 @@ const App = () => {
       setArrowShare('icon-end');
     }
   };
+  //Para las paletas
+  const handlePalettes = (ev) => {
+    setPalettes(ev.target.value);
+    setData({
+      ...data,
+      palette: ev.currentTarget.value,
+    });
+  };
+
+  //Para el formulario
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
-
     if (whichIput === 'name') {
       setData({
         ...data,
@@ -92,11 +108,11 @@ const App = () => {
     <div className="App">
       <Header />
       <main className="cards">
-        <Preview data={data} />
+        <Preview data={data} palettes={palettes} />
         <Form
           data={data}
           handleInput={handleInput}
-          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} />
+          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} palettes={palettes} handlePalettes={handlePalettes}/>
       </main>
       <Footer />
     </div>
