@@ -82,6 +82,7 @@ const App = () => {
     }
   };
 
+
   return (
     <div className="App">
       <Header />
@@ -90,7 +91,15 @@ const App = () => {
         <Form
           data={data}
           handleInput={handleInput}
-          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare} handleCollapsable={handleCollapsable} />
+          design={design}
+          arrowDesign={arrowDesign}
+          fill={fill}
+          arrowFill={arrowFill}
+          share={share}
+          arrowShare={arrowShare}
+          handleCollapsable={handleCollapsable}
+          setDesign={setDesign}
+        />
       </main>
       <Footer />
     </div>
