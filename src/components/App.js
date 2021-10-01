@@ -11,7 +11,7 @@ import Preview from './MainPreview';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  const [collapsable, setCollapsable] = useState('hidden');
+  const [, setCollapsable] = useState('hidden');
   const [data, setData] = useState({
     name: '',
     job: '',
@@ -55,6 +55,10 @@ const App = () => {
       });
     }
   };
+  const handleReset = () =>{
+    localStorage.clear();
+    window.location.reload(true);
+  }
 
   return (
     <div className="App">

@@ -16,7 +16,8 @@ const Preview = (props) => {
   } else {
     jobToDisplay = props.data.job;
   }
-  return (
+  
+ return (
     <section className="hero">
       <button className="hero__button js-resetButton" type="reset">
         <i className="far fa-trash-alt"></i>Reset
