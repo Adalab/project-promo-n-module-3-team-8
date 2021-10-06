@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Form from './MainForm';
 import Preview from './MainPreview';
+import ls from '../services/ls';
 //import '../styles/main.scss';
 //import '../styles/core/reset.scss';
 //import '../styles/pages/index.scss';
@@ -56,7 +57,7 @@ const App = () => {
     }
   };
   const handleReset = () =>{
-    localStorage.clear();
+    ls.clear();
     window.location.reload(true);
   }
 
