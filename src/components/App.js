@@ -21,7 +21,7 @@ const App = () => {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   //Para las paletas
-  const [palettes, setPalettes] = useState("palette1");
+  const [palettes, setPalettes] = useState("");
   //Para el formulario
   const [data, setData] = useState({
     name: '',
@@ -61,11 +61,8 @@ const App = () => {
   };
   //Para las paletas
   const handlePalettes = (ev) => {
-    setPalettes(ev.target.value);
-    setData({
-      ...data,
-      palette: ev.currentTarget.value,
-    });
+    setPalettes(ev.target.checked);
+    
   };
 
   //Para el formulario

@@ -21,7 +21,7 @@ const Preview = (props) => {
       <button className="hero__button js-resetButton" type="reset">
         <i className="far fa-trash-alt"></i>Reset
       </button>
-      <div className={`hero__section js_hero__section palette 1 ${props.palettes}`}>
+      <div className={`hero__section palette 1 ${props.palettes}`}>
         <article className="hero__section--article">
           <div className="hero__section--article--rectangle js-rectangle"></div>
           <h2 className="hero__section--article--name js_preview js-name">
