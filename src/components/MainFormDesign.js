@@ -2,6 +2,7 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/design.scss';
 
+<<<<<<< HEAD
 
 const Design = () => {
   //COLAPSABLE
@@ -18,17 +19,24 @@ const Design = () => {
       setCollapsable('');
     }
   };
+=======
+const Design = (props) => {
+  const handleClick = (ev) => {
+    props.handleCollapsable(ev.currentTarget.id)
+  }
+  
+>>>>>>> main
   return (
-    <section className="profilecards__section--design">
-      <div className="form__header" onClick={handleClick}>
+    <section className="profilecards__section--design" onClick={handleClick}  id='collapsableDesign'>
+      <div className="form__header" >
         <div className="header--text">
           <i className="far fa-object-ungroup icon-start"></i>
           <h2 className="header--title">Diseña</h2>
         </div>
-        <i className="fas fa-chevron-up icon-end js_collapsable"></i>
+        <i className={`fas fa-chevron-down arrow ${props.arrowDesign}`}></i>
       </div>
 
-      <fieldset className={`design__form js_fieldset ${collapsable}`}>
+      <fieldset className={`design__form js_fieldset ${props.design}`}>
         <h3 className="design__form--colors">colores:</h3>
         <div className="design__form--ranges">
           <label className="label-1" htmlFor="1">
