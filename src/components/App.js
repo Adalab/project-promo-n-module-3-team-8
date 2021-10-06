@@ -4,16 +4,20 @@ import Header from './Header';
 import Footer from './Footer';
 import Form from './MainForm';
 import Preview from './MainPreview';
+import ImageReader from './ImageReader';
 
 const App = () => {
+  const [collapsable, setCollapsable] = useState('hidden');
+  const [palette, setPalette] = useState('palette1');
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
-
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   const [data, setData] = useState({
+    palette: '',
+    image: '',
     name: '',
     job: '',
     tel: '',
@@ -21,6 +25,8 @@ const App = () => {
     linkedin: '',
     github: '',
   });
+
+
   const handleCollapsable = (id) => {
     const selected = id;
     console.log(selected);
@@ -47,6 +53,8 @@ const App = () => {
       setArrowShare('icon-end');
     }
   };
+
+
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
     if (whichIput === 'name') {
@@ -79,18 +87,25 @@ const App = () => {
         ...data,
         github: event.currentTarget.value,
       });
-    }
+    };
+  }
+  const handleImage = (imageData) => {
+    console.log(imageData);
   };
-
 
   return (
     <div className="App">
       <Header />
       <main className="cards">
-        <Preview data={data} />
+        <Preview
+          data={data}
+          palette={palette}
+          handleImage={handleImage}
+        />
         <Form
           data={data}
           handleInput={handleInput}
+          setPalette={setPalette}
           design={design}
           arrowDesign={arrowDesign}
           fill={fill}
@@ -98,12 +113,11 @@ const App = () => {
           share={share}
           arrowShare={arrowShare}
           handleCollapsable={handleCollapsable}
-          setDesign={setDesign}
         />
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 export default App;
