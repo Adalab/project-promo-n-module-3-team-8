@@ -13,6 +13,12 @@ import Preview from './MainPreview';
 const App = () => {
   const [collapsable, setCollapsable] = useState('hidden');
   const [palette, setPalette] = useState('palette1');
+  const [design, setDesign] = useState('');
+  const [fill, setFill] = useState('hidden');
+  const [share, setShare] = useState('hidden');
+  const [arrowDesign, setArrowDesign] = useState('');
+  const [arrowFill, setArrowFill] = useState('');
+  const [arrowShare, setArrowShare] = useState('');
   const [data, setData] = useState({
     palette: '',
     image: '',
@@ -24,6 +30,33 @@ const App = () => {
     github: '',
   });
 
+
+  const handleCollapsable = (id) => {
+    const selected = id;
+    console.log(selected);
+    if (selected === 'collapsableDesign') {
+      setDesign('');
+      setFill('hidden');
+      setShare('hidden');
+      setArrowDesign('icon-end');
+      setArrowFill('');
+      setArrowShare('');
+    } else if (selected === 'collapsableFill') {
+      setDesign('hidden');
+      setFill('');
+      setShare('hidden');
+      setArrowDesign('');
+      setArrowFill('icon-end');
+      setArrowShare('');
+    } else if (selected === 'collapsableShare') {
+      setDesign('hidden');
+      setFill('hidden');
+      setShare('');
+      setArrowDesign('');
+      setArrowFill('');
+      setArrowShare('icon-end');
+    }
+  };
 
 
   const handleInput = (event) => {
@@ -59,20 +92,29 @@ const App = () => {
         github: event.currentTarget.value,
       });
     };
+  }
 
-    return (
-      <div className="App">
-        <Header />
-        <main className="cards">
-          <Preview data={data} />
-          <Form
-            data={data}
-            handleInput={handleInput}
-          />
-        </main>
-        <Footer />
-      </div>
-    );
-  };
+  return (
+    <div className="App">
+      <Header />
+      <main className="cards">
+        <Preview data={data} palette={palette} />
+        <Form
+          data={data}
+          handleInput={handleInput}
+          setPalette={setPalette}
+          design={design}
+          arrowDesign={arrowDesign}
+          fill={fill}
+          arrowFill={arrowFill}
+          share={share}
+          arrowShare={arrowShare}
+          handleCollapsable={handleCollapsable}
+        />
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
-  export default App;
+export default App;

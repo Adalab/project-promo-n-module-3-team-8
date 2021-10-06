@@ -2,34 +2,23 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/share.scss';
 
-const Share = () => {
-  //COLAPSABLE
-  const [collapsable, setCollapsable] = useState('hidden');
-  const handleClick = (event) => {
-    console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-    if (collapsable === '') {
-      setCollapsable('hidden');
-    } else {
-      setCollapsable('');
-    }
-  };
+ const Share = (props) => {
+  const handleClick = (ev) => {
+    props.handleCollapsable(ev.currentTarget.id)
+  }
 
   return (
     <>
-      <div className="form__header" onClick={handleClick}>
+      <div className="form__header" onClick={handleClick} id='collapsableShare'>
         <div className="header--text">
           <i className="fas fa-share-alt icon-start"></i>
           <h2 className="header--title">Comparte</h2>
         </div>
-        <i className="fas fa-chevron-up icon-end js_collapsable"></i>
+        <i className={`fas fa-chevron-down arrow ${props.arrowShare}`}></i>
       </div>
 
       <fieldset
-        className={`profilecards__section--share js_fieldset ${collapsable}`}
+        className={`profilecards__section--share js_fieldset ${props.share}`}
       >
         <button className="share__button js_share__button">
           <a

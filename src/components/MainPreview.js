@@ -3,7 +3,7 @@ import { useState } from 'react';
 //import '../styles/layout/hero.scss';
 
 const Preview = (props) => {
-  
+
   let nameToDisplay;
   if (props.data.name === '') {
     nameToDisplay = 'Nombre Apellido';
@@ -18,10 +18,10 @@ const Preview = (props) => {
   }
   return (
     <section className="hero">
-      <button className="hero__button js-resetButton" type="reset">
-        <i className="far fa-trash-alt"></i>Reset
+      <button className="hero__button" type="reset" >
+        <i className="far fa-trash-alt" />Reset
       </button>
-      <div className="hero__section js_hero__section">
+      <div className={`hero__section ${props.palette}`}>
         <article className="hero__section--article">
           <div className="hero__section--article--rectangle js-rectangle"></div>
           <h2 className="hero__section--article--name js_preview js-name">
@@ -75,7 +75,7 @@ const Preview = (props) => {
           </a>
         </nav>
       </div>
-    </section>
+    </section >
   );
 };
 

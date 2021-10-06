@@ -1,3 +1,4 @@
+import { useState } from 'react/cjs/react.development';
 import Design from './MainFormDesign';
 import Fill from './MainFormFill';
 import Share from './MainFormShare';
@@ -5,15 +6,15 @@ import Share from './MainFormShare';
 //import '../styles/pages/main-landing.scss';
 
 const Form = (props) => {
-  return (
-    <form className="profilecards__app" action="#" method="POST">
-      <Design />
-      <Fill
+  const handleInput=(event)=>{
+    props.handleInput(event.target.value)
+  }
 
-        data={props.data}
-        handleInput={props.handleInput}
-      />
-      <Share />
+  return  (
+    <form className="profilecards__app" action="#" method="POST">
+      <Design design={props.design} arrowDesign={props.arrowDesign} handleCollapsable={props.handleCollapsable}/>
+      <Fill data={props.data} fill={props.fill} arrowFill={props.arrowFill} handleCollapsable={props.handleCollapsable} handleInput={props.handleInput}  />
+      <Share share={props.share} arrowShare={props.arrowShare}  handleCollapsable={props.handleCollapsable} />
     </form>
   );
 };
