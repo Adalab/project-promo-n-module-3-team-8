@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Form from './MainForm';
 import Preview from './MainPreview';
 import ls from '../services/ls';
+import stars from '../images/stars.gif';
 //import '../styles/main.scss';
 //import '../styles/core/reset.scss';
 //import '../styles/pages/index.scss';
@@ -12,7 +13,8 @@ import ls from '../services/ls';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  const [, setCollapsable] = useState('hidden');
+  const [collapsable, setCollapsable] = useState('hidden');
+  const [image, setImage] = useState(stars);
   const [data, setData] = useState({
     name: '',
     job: '',
@@ -56,10 +58,20 @@ const App = () => {
       });
     }
   };
-  const handleReset = () =>{
-    ls.clear();
-    window.location.reload(true);
-  }
+  const handleReset = () => {
+    setData({
+      palette:'',
+      name: '',
+      job: '',
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+      image: '',
+  });
+  setImage(stars);
+  setPalette('palette1');
+};
 
   return (
     <div className="App">
@@ -73,7 +85,7 @@ const App = () => {
       </main>
       <Footer />
     </div>
-  );
-};
+  )};
+
 
 export default App;
