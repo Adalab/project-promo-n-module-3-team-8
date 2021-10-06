@@ -12,8 +12,8 @@ const Form = (props) => {
 
   return  (
     <form className="profilecards__app" action="#" method="POST">
-      <Design design={props.design} arrowDesign={props.arrowDesign} handleCollapsable={props.handleCollapsable} palettes={props.palettes} handlePalettes={props.handlePalettes}/>
-      <Fill data={props.data} fill={props.fill} arrowFill={props.arrowFill} handleCollapsable={props.handleCollapsable} handleInput={handleInput}  />
+      <Design design={props.design} arrowDesign={props.arrowDesign} handleCollapsable={props.handleCollapsable}/>
+      <Fill data={props.data} fill={props.fill} arrowFill={props.arrowFill} handleCollapsable={props.handleCollapsable} handleInput={props.handleInput}  />
       <Share share={props.share} arrowShare={props.arrowShare}  handleCollapsable={props.handleCollapsable} />
     </form>
   );

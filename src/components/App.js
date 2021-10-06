@@ -11,12 +11,11 @@ import Preview from './MainPreview';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  //Variables de estado
-  //Para los collapsables
+  const [collapsable, setCollapsable] = useState('hidden');
+  const [palette, setPalette] = useState('palette1');
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
-
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
@@ -24,6 +23,8 @@ const App = () => {
   const [palettes, setPalettes] = useState("");
   //Para el formulario
   const [data, setData] = useState({
+    palette: '',
+    image: '',
     name: '',
     job: '',
     tel: '',
@@ -31,8 +32,8 @@ const App = () => {
     linkedin: '',
     github: '',
   });
-  //Funciones manejadoras
-  //Para los collapsables
+
+
   const handleCollapsable = (id) => {
     const selected = id;
     console.log(selected);
@@ -59,13 +60,8 @@ const App = () => {
       setArrowShare('icon-end');
     }
   };
-  //Para las paletas
-  const handlePalettes = (ev) => {
-    setPalettes(ev.target.checked);
-    
-  };
 
-  //Para el formulario
+
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
     if (whichIput === 'name') {
@@ -98,22 +94,30 @@ const App = () => {
         ...data,
         github: event.currentTarget.value,
       });
-    }
-  };
+    };
+  }
 
   return (
     <div className="App">
       <Header />
       <main className="cards">
-        <Preview data={data} palettes={palettes} />
+        <Preview data={data} palette={palette} />
         <Form
           data={data}
           handleInput={handleInput}
-          design={design} arrowDesign={arrowDesign} fill={fill} arrowFill={arrowFill} share={share} arrowShare={arrowShare}  handleCollapsable={handleCollapsable} palettes={palettes} handlePalettes={handlePalettes}/>
+          setPalette={setPalette}
+          design={design}
+          arrowDesign={arrowDesign}
+          fill={fill}
+          arrowFill={arrowFill}
+          share={share}
+          arrowShare={arrowShare}
+          handleCollapsable={handleCollapsable}
+        />
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 export default App;

@@ -3,12 +3,18 @@ import { useState } from 'react';
 //import '../styles/layout/design.scss';
 
 const Design = (props) => {
+
+
+  const handlePalette = (ev) => {
+    props.setPalette(ev.target.checked)
+  }
+
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
   }
-  
+
   return (
-    <section className="profilecards__section--design" onClick={handleClick}  id='collapsableDesign'>
+    <section className="profilecards__section--design" onClick={handleClick} id='collapsableDesign'>
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-object-ungroup icon-start"></i>
@@ -25,10 +31,10 @@ const Design = (props) => {
               className="range js_palette"
               id="palette1"
               type="radio"
-              value="palette1"
-              name="palette" 
-              onChange={props.handlePalettes}
-              checked={props.palettes === "palette1"}
+              value="1"
+              name="palette"
+              checked
+              onChange={handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -42,8 +48,7 @@ const Design = (props) => {
               type="radio"
               value="palette2"
               name="palette"
-              onChange={props.handlePalettes}
-              checked={props.palettes === "palette2"}
+              onChange={handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -57,8 +62,7 @@ const Design = (props) => {
               type="radio"
               value="palette3"
               name="palette"
-              onChange={props.handlePalettes}
-              checked={props.palettes === "palette3"}
+              onChange={handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
