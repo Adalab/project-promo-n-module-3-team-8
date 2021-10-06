@@ -12,7 +12,10 @@ import Preview from './MainPreview';
 
 const App = () => {
   const [collapsable, setCollapsable] = useState('hidden');
+  const [palette, setPalette] = useState('palette1');
   const [data, setData] = useState({
+    palette: '',
+    image: '',
     name: '',
     job: '',
     tel: '',
@@ -20,9 +23,11 @@ const App = () => {
     linkedin: '',
     github: '',
   });
+
+
+
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
-
     if (whichIput === 'name') {
       setData({
         ...data,
@@ -53,22 +58,21 @@ const App = () => {
         ...data,
         github: event.currentTarget.value,
       });
-    }
+    };
+
+    return (
+      <div className="App">
+        <Header />
+        <main className="cards">
+          <Preview data={data} />
+          <Form
+            data={data}
+            handleInput={handleInput}
+          />
+        </main>
+        <Footer />
+      </div>
+    );
   };
 
-  return (
-    <div className="App">
-      <Header />
-      <main className="cards">
-        <Preview data={data} />
-        <Form
-          data={data}
-          handleInput={handleInput}
-        />
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-export default App;
+  export default App;
