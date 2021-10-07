@@ -110,14 +110,14 @@
   border-radius: 22.5px;
 }
 
-.palette1{
-  .pname{
+.palette1 {
+  .pname {
     color: $dark-green-blue;
   }
-  .pline{
+  .pline {
     background-color: $dirty-blue;
   }
-  .picon{
+  .picon {
     color: $dark-green-blue;
     border-color: $hospital-green;
     &:hover {
@@ -125,15 +125,14 @@
     }
   }
 }
-.palette2{
-  .pname{
+.palette2 {
+  .pname {
     color: $dried-blood;
   }
-  .pline{
+  .pline {
     background-color: $rusty-red;
-    
   }
-  .picon{
+  .picon {
     color: $dried-blood;
     border-color: $tomato;
     &:hover {
@@ -141,18 +140,18 @@
     }
   }
 }
-.palette3{
-  .pname{
+.palette3 {
+  .pname {
     color: $slate;
   }
-  .pline{
+  .pline {
     background-color: $faded-orange;
   }
-  .picon{
-    border-color: $light-grey-blue;
+  .picon {
+    color: $slate;
+    border-color: $faded-orange;
     &:hover {
-      background-color: $light-grey-blue;
+      background-color: $faded-orange;
     }
   }
 }
-
