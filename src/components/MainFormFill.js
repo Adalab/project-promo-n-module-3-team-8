@@ -1,18 +1,22 @@
-
 //import '../styles/layout/fill.scss';
 //import '../styles/layout/header-collapsable.scss';
+import ImageReaders from './ImageReaders';
 
 const Fill = (props) => {
-  const handleInput=(event)=>{
-    props.handleInput(event.target.value)
-  }
+  const handleInput = (event) => {
+    props.handleInput(event.target.value);
+  };
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.currentTarget.id)
-  }
-  
+    props.handleCollapsable(ev.currentTarget.id);
+  };
+
   return (
-    <section className="section__fill" onClick={handleClick} id="collapsableFill">
-      <div className="form__header" >
+    <section
+      className="section__fill"
+      onClick={handleClick}
+      id="collapsableFill"
+    >
+      <div className="form__header">
         <div className="header--text">
           <i className="far fa-keyboard icon-start"></i>
           <h2 className="header--title">Rellena</h2>
@@ -45,27 +49,12 @@ const Fill = (props) => {
           value={props.data.job}
           onChange={props.handleInput}
         />
-        <label className="form__label" htmlFor="">
-          Imagen de perfil
-        </label>
-        <div className="form__choose--image">
-          <label
-            className="choose__image--button"
-            form="fill__form"
-            name="photo"
-            htmlFor="photo"
-          >
-            Añadir imagen
-          </label>
-          <input
-            name="photo"
-            type="file"
-            id="photo"
-            className="action__hiddenField js__profile-upload-btn"
-            onChange={props.handleInput}
-          />
-          <div className="choose__image--preview js__profile-preview"></div>
-        </div>
+
+        <ImageReaders
+          handleImage={props.handleImage}
+          dataImage={props.dataImage}
+        />
+
         <label className="form__label" htmlFor="email">
           Email
         </label>

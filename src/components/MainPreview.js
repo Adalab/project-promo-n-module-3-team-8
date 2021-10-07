@@ -2,7 +2,6 @@ import stars from '../images/stars.gif';
 //import '../styles/layout/hero.scss';
 
 const Preview = (props) => {
-
   let nameToDisplay;
   if (props.data.name === '') {
     nameToDisplay = 'Nombre Apellido';
@@ -21,7 +20,8 @@ const Preview = (props) => {
       <button
         className="hero__button js-resetButton"
         type="reset"
-        onClick={props.handleReset}>
+        onClick={props.handleReset}
+      >
         <i className="far fa-trash-alt"></i>Reset
       </button>
       <div className={`hero__section ${props.palette}`}>
@@ -37,7 +37,7 @@ const Preview = (props) => {
 
         <div
           className="hero__section--img js__profile-image"
-          style={{ backgroundImage: `url(${stars})` }}
+          style={{ backgroundImage: `url(${props.dataImage})` }}
         ></div>
         <nav className="hero__section--media ">
           <a href={'tel:' + props.data.tel} className="js_preview">
@@ -78,7 +78,7 @@ const Preview = (props) => {
           </a>
         </nav>
       </div>
-    </section >
+    </section>
   );
 };
 

@@ -6,6 +6,7 @@ import Form from './MainForm';
 import Preview from './MainPreview';
 import stars from '../images/stars.gif';
 import ls from '../services/ls';
+
 //import '../styles/main.scss';
 //import '../styles/core/reset.scss';
 //import '../styles/pages/index.scss';
@@ -14,7 +15,7 @@ import ls from '../services/ls';
 
 const App = () => {
   const [palette, setPalette] = useState('palette1');
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState(stars);
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
@@ -22,7 +23,6 @@ const App = () => {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   //Para las paletas
-
 
   //Para el formulario
   const [data, setData] = useState(
@@ -100,8 +100,7 @@ const App = () => {
 
   const handlePalette = (event) => {
     setPalette(event.target.id);
-    setData({ ...data, palettes: event.target.id })
-    
+    setData({ ...data, palettes: event.target.id });
   };
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
@@ -135,8 +134,13 @@ const App = () => {
         ...data,
         github: event.currentTarget.value,
       });
-    }; 
-  }
+    }
+  };
+
+  const handleImage = (imageData) => {
+    setImage(imageData);
+    setData({ ...data, image: imageData });
+  };
 
   return (
     <div className="App">
@@ -146,6 +150,7 @@ const App = () => {
           data={data}
           palette={palette}
           handleReset={handleReset}
+          dataImage={image}
         />
         <Form
           data={data}
@@ -158,11 +163,13 @@ const App = () => {
           arrowShare={arrowShare}
           handleCollapsable={handleCollapsable}
           handlePalette={handlePalette}
+          dataImage={image}
+          handleImage={handleImage}
         />
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default App;
