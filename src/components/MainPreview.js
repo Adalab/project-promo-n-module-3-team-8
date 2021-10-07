@@ -1,5 +1,4 @@
 import stars from '../images/stars.gif';
-import { useState } from 'react';
 //import '../styles/layout/hero.scss';
 
 const Preview = (props) => {
@@ -22,10 +21,10 @@ const Preview = (props) => {
       <button
         className="hero__button js-resetButton"
         type="reset">
-        onClick={props.handlereset}
+        onClick={props.handleReset}
         <i className="far fa-trash-alt"></i>Reset
       </button>
-      <div className="hero__section js_hero__section">
+      <div className={`hero__section ${props.palette}`}>
         <article className="hero__section--article">
           <div className="hero__section--article--rectangle js-rectangle"></div>
           <h2 className="hero__section--article--name js_preview js-name">
@@ -47,7 +46,8 @@ const Preview = (props) => {
               id="mobile"
             ></i>
           </a>
-          <a href={'mailto:' + props.data.email}
+          <a
+            href={'mailto:' + props.data.email}
             className="js_preview"
             target="_blank"
           >
@@ -55,29 +55,30 @@ const Preview = (props) => {
               className="far fa-envelope js-icon icon color3 js_input_email"
               id="email"
             ></i>
-        </a>
-        <a
-          href={'https://linkedIn.com/in/' + props.data.linkedin}>
-          className="js_preview"
-          target="_blank"
-        >
-          <i
-            className="fab fa-linkedin-in js-icon icon color3 js_input_linkedin"
-            id="linkedin"
-          ></i>
-        </a>
-        <a
-          href={'https://github.com/' + props.data.github}
-          className="js_preview"
-          target="_blank"
-        />
-          <i
-            className="fab fa-github-alt js-icon icon color3 js_input_github"
-            id="github"
-          ></i>
+          </a>
+          <a
+            href={'https://linkedIn.com/in/' + props.data.linkedin}
+            className="js_preview"
+            target="_blank"
+          >
+            <i
+              className="fab fa-linkedin-in js-icon icon color3 js_input_linkedin"
+              id="linkedin"
+            ></i>
+          </a>
+          <a
+            href={'https://github.com/' + props.data.github}
+            className="js_preview"
+            target="_blank"
+          >
+            <i
+              className="fab fa-github-alt js-icon icon color3 js_input_github"
+              id="github"
+            ></i>
+          </a>
         </nav>
       </div>
-    </section>
+    </section >
   );
 };
 

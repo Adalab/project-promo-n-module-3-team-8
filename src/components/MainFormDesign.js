@@ -2,32 +2,15 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/design.scss';
 
-<<<<<<< HEAD
-
-const Design = () => {
-  //COLAPSABLE
-  const [collapsable, setCollapsable] = useState('hidden');
-  const handleClick = (event) => {
-    console.log(event.currentTarget);
-    //Revisar y pedir soporte:
-    //¿podríamos usar el bucle for?
-    //¿se podría hacer identidicando el current Target con las clases que tienen los contenedores de section con un parentNode?
-    //¿cómo podríamos diferenciar cada uno de los collapsables sin tener que repetir 3 veces el código al usar clases?
-    if (collapsable === '') {
-      setCollapsable('hidden');
-    } else {
-      setCollapsable('');
-    }
-  };
-=======
 const Design = (props) => {
-  const handleClick = (ev) => {
+
+
+const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
   }
-  
->>>>>>> main
+
   return (
-    <section className="profilecards__section--design" onClick={handleClick}  id='collapsableDesign'>
+    <section className="profilecards__section--design" onClick={handleClick} id='collapsableDesign'>
       <div className="form__header" >
         <div className="header--text">
           <i className="far fa-object-ungroup icon-start"></i>
@@ -46,6 +29,7 @@ const Design = (props) => {
               type="radio"
               value="1"
               name="palette"
+              onChange={props.handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -59,6 +43,7 @@ const Design = (props) => {
               type="radio"
               value="2"
               name="palette"
+              onChange={props.handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
@@ -72,6 +57,7 @@ const Design = (props) => {
               type="radio"
               value="3"
               name="palette"
+              onChange={props.handlePalette}
             />
             <div className="box-1"></div>
             <div className="box-2"></div>
