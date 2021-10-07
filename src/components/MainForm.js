@@ -13,7 +13,7 @@ const Form = (props) => {
 
   return  (
     <form className="profilecards__app" action="#" method="POST">
-      <Design design={props.design} arrowDesign={props.arrowDesign} handleCollapsable={props.handleCollapsable}/>
+      <Design design={props.design} arrowDesign={props.arrowDesign} handleCollapsable={props.handleCollapsable} handlePalette={props.handlePalette}/>
       <Fill data={props.data} fill={props.fill} arrowFill={props.arrowFill} handleCollapsable={props.handleCollapsable} handleInput={props.handleInput}  />
       <Share share={props.share} arrowShare={props.arrowShare}  handleCollapsable={props.handleCollapsable} />
     </form>

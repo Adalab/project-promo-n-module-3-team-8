@@ -21,6 +21,9 @@ const App = () => {
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
+  //Para las paletas
+  
+  //Para el formulario
   const [data, setData] = useState({
     palette: '',
     image: '',
@@ -72,6 +75,11 @@ const App = () => {
       setArrowShare('icon-end');
     }
   };
+
+const handlePalette =(event)=>{
+  setPalette(event.target.id);
+  setData({...data, palettes:event.target.id})
+};
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
     if (whichIput === 'name') {
@@ -104,8 +112,8 @@ const App = () => {
         ...data,
         github: event.currentTarget.value,
       });
-    }
-  };
+    };
+  }
 
   return (
     <div className="App">
