@@ -134,6 +134,7 @@ const handlePalette =(event)=>{
           share={share} 
           arrowShare={arrowShare} 
           handleCollapsable={handleCollapsable} 
+          handlePalette={handlePalette}
           />
       </main>
       <Footer />
