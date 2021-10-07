@@ -46,7 +46,7 @@ const Preview = (props) => {
           <a
             href={'mailto:' + props.data.email}
             className="js_preview picon"
-            target="_blank"
+            target="-blank"
           >
             <i
               className="far fa-envelope js-icon icon color3 js_input_email picon"
@@ -56,7 +56,7 @@ const Preview = (props) => {
           <a
             href={'https://linkedIn.com/in/' + props.data.linkedin}
             className="js_preview picon"
-            target="_blank"
+            target="-blank"
           >
             <i
               className="fab fa-linkedin-in  icon color3  picon"
@@ -66,7 +66,7 @@ const Preview = (props) => {
           <a
             href={'https://github.com/' + props.data.github}
             className=" picon"
-            target="_blank"
+            target="-blank"
           >
             <i
               className="fab fa-github-alt icon color3 js_input_github picon"
