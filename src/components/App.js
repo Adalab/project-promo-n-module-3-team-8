@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/main.scss';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './MainForm';
 import Preview from './MainPreview';
 import stars from '../images/stars.gif';
+import ls from '../services/ls';
 //import '../styles/main.scss';
 //import '../styles/core/reset.scss';
 //import '../styles/pages/index.scss';
@@ -12,9 +13,8 @@ import stars from '../images/stars.gif';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  const [collapsable, setCollapsable] = useState('hidden');
   const [palette, setPalette] = useState('palette1');
-  const [image, setImage] = useState ('');
+  const [image, setImage] = useState('');
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
   const [share, setShare] = useState('hidden');
@@ -22,20 +22,41 @@ const App = () => {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   //Para las paletas
-  
+
+
   //Para el formulario
-  const [data, setData] = useState({
-    palette: '',
-    image: '',
-    name: '',
-    job: '',
-    tel: '',
-    email: '',
-    linkedin: '',
-    github: '',
-  });
+  const [data, setData] = useState(
+    ls.get('data', {
+      palette: '',
+      image: '',
+      name: '',
+      job: '',
+      tel: '',
+      email: '',
+      linkedin: '',
+      github: '',
+    })
+  );
+
+  useEffect(() => {
+    // Guardamos el nombre y el email en el local storage
+    ls.set('data', {
+      palette: data.palette,
+      name: data.name,
+      job: data.job,
+      tel: data.tel,
+      email: data.email,
+      linkedin: data.linkedin,
+      github: data.github,
+      image: '',
+    });
+    // Este useEffect solo se ejecutará cuando cambie el nombre o el email
+    console.log(data);
+  }, [data]);
 
   const handleReset = () => {
+    localStorage.clear();
+    window.location.reload(true);
     setData({
       palette: '',
       image: '',
@@ -49,6 +70,7 @@ const App = () => {
     setImage(stars);
     setPalette('palette1');
   };
+
   const handleCollapsable = (id) => {
     const selected = id;
     console.log(selected);
@@ -76,10 +98,11 @@ const App = () => {
     }
   };
 
-const handlePalette =(event)=>{
-  setPalette(event.target.id);
-  setData({...data, palettes:event.target.id})
-};
+  const handlePalette = (event) => {
+    setPalette(event.target.id);
+    setData({ ...data, palettes: event.target.id })
+    
+  };
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
     if (whichIput === 'name') {
@@ -112,7 +135,7 @@ const handlePalette =(event)=>{
         ...data,
         github: event.currentTarget.value,
       });
-    };
+    }; 
   }
 
   return (
@@ -127,15 +150,15 @@ const handlePalette =(event)=>{
         <Form
           data={data}
           handleInput={handleInput}
-          design={design} 
-          arrowDesign={arrowDesign} 
-          fill={fill} 
-          arrowFill={arrowFill} 
-          share={share} 
-          arrowShare={arrowShare} 
-          handleCollapsable={handleCollapsable} 
+          design={design}
+          arrowDesign={arrowDesign}
+          fill={fill}
+          arrowFill={arrowFill}
+          share={share}
+          arrowShare={arrowShare}
+          handleCollapsable={handleCollapsable}
           handlePalette={handlePalette}
-          />
+        />
       </main>
       <Footer />
     </div>
