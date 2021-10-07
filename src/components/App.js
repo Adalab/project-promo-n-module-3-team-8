@@ -11,7 +11,7 @@ import Preview from './MainPreview';
 //import '../styles/components/links.scss';
 
 const App = () => {
-  const [collapsable, setCollapsable] = useState('hidden');
+  
   const [palette, setPalette] = useState('palette1');
   const [design, setDesign] = useState('');
   const [fill, setFill] = useState('hidden');
@@ -20,10 +20,9 @@ const App = () => {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   //Para las paletas
-  const [palettes, setPalettes] = useState("");
+  
   //Para el formulario
   const [data, setData] = useState({
-    palette: '',
     image: '',
     name: '',
     job: '',
@@ -61,7 +60,10 @@ const App = () => {
     }
   };
 
-
+const handlePalette =(event)=>{
+  setPalette(event.target.id);
+  setData({...data, palettes:event.target.id})
+};
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
     if (whichIput === 'name') {
@@ -105,7 +107,6 @@ const App = () => {
         <Form
           data={data}
           handleInput={handleInput}
-          setPalette={setPalette}
           design={design}
           arrowDesign={arrowDesign}
           fill={fill}
@@ -113,6 +114,7 @@ const App = () => {
           share={share}
           arrowShare={arrowShare}
           handleCollapsable={handleCollapsable}
+          handlePalette={handlePalette}
         />
       </main>
       <Footer />

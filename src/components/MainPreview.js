@@ -23,11 +23,11 @@ const Preview = (props) => {
       </button>
       <div className={`hero__section ${props.palette}`}>
         <article className="hero__section--article">
-          <div className="hero__section--article--rectangle js-rectangle"></div>
-          <h2 className="hero__section--article--name js_preview js-name">
+          <div className="hero__section--article--rectangle js-rectangle pline"></div>
+          <h2 className="hero__section--article--name js_preview js-name pname">
             {nameToDisplay}
           </h2>
-          <p className="hero__section--article--text js_preview js_preview-job">
+          <p className="hero__section--article--text js_preview js_preview-job pname">
             {jobToDisplay}
           </p>
         </article>
@@ -36,40 +36,40 @@ const Preview = (props) => {
           className="hero__section--img js__profile-image"
           style={{ backgroundImage: `url(${stars})` }}
         ></div>
-        <nav className="hero__section--media">
+        <nav className="hero__section--media ">
           <a href={'tel:' + props.data.tel} className="js_preview">
             <i
-              className="fas fa-mobile-alt js-icon icon color3 js_input_mobile"
+              className="fas fa-mobile-alt js-icon icon color3 js_input_mobile picon"
               id="mobile"
             ></i>
           </a>
           <a
             href={'mailto:' + props.data.email}
-            className="js_preview"
+            className="js_preview picon"
             target="_blank"
           >
             <i
-              className="far fa-envelope js-icon icon color3 js_input_email"
+              className="far fa-envelope js-icon icon color3 js_input_email picon"
               id="email"
             ></i>
           </a>
           <a
             href={'https://linkedIn.com/in/' + props.data.linkedin}
-            className="js_preview"
+            className="js_preview picon"
             target="_blank"
           >
             <i
-              className="fab fa-linkedin-in js-icon icon color3 js_input_linkedin"
+              className="fab fa-linkedin-in  icon color3  picon"
               id="linkedin"
             ></i>
           </a>
           <a
             href={'https://github.com/' + props.data.github}
-            className="js_preview"
+            className=" picon"
             target="_blank"
           >
             <i
-              className="fab fa-github-alt js-icon icon color3 js_input_github"
+              className="fab fa-github-alt icon color3 js_input_github picon"
               id="github"
             ></i>
           </a>
