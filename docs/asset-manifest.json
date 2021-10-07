@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.e90d18b7.chunk.css",
-    "main.js": "./static/js/main.0959e608.chunk.js",
-    "main.js.map": "./static/js/main.0959e608.chunk.js.map",
+    "main.css": "./static/css/main.925deb36.chunk.css",
+    "main.js": "./static/js/main.915b0147.chunk.js",
+    "main.js.map": "./static/js/main.915b0147.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.cb67231f.js",
     "runtime-main.js.map": "./static/js/runtime-main.cb67231f.js.map",
     "static/js/2.1bdaf6db.chunk.js": "./static/js/2.1bdaf6db.chunk.js",
     "static/js/2.1bdaf6db.chunk.js.map": "./static/js/2.1bdaf6db.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.e90d18b7.chunk.css.map": "./static/css/main.e90d18b7.chunk.css.map",
+    "static/css/main.925deb36.chunk.css.map": "./static/css/main.925deb36.chunk.css.map",
     "static/js/2.1bdaf6db.chunk.js.LICENSE.txt": "./static/js/2.1bdaf6db.chunk.js.LICENSE.txt",
     "static/media/logo-awesome-profile-cards.1dad64f9.svg": "./static/media/logo-awesome-profile-cards.1dad64f9.svg",
     "static/media/stars.6a063175.gif": "./static/media/stars.6a063175.gif"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.cb67231f.js",
     "static/js/2.1bdaf6db.chunk.js",
-    "static/css/main.e90d18b7.chunk.css",
-    "static/js/main.0959e608.chunk.js"
+    "static/css/main.925deb36.chunk.css",
+    "static/js/main.915b0147.chunk.js"
   ]
 }
