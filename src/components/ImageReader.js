@@ -1,4 +1,3 @@
-// Fichero src/components/ImageReader.js
 import { useRef, useState } from 'react';
 
 /*
