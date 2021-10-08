@@ -36,7 +36,7 @@ const Preview = (props) => {
         </article>
 
         <div
-          className="hero__section--img js__profile-image"
+          className="hero__section--img js__profile-image "
           style={{ backgroundImage: `url(${props.dataImage})` }}
         ></div>
         <nav className="hero__section--media ">

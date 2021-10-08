@@ -2,14 +2,38 @@ import { useState } from 'react';
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/share.scss';
 
- const Share = (props) => {
+const Share = (props) => {
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.currentTarget.id)
-  }
+    props.handleCollapsable(ev.currentTarget.id);
+  };
+
+  const handleShare = (ev) => {
+    ev.preventDefault();
+    fetch('https://awesome-profile-cards.herokuapp.com/card', {
+      method: 'POST',
+      body: JSON.stringify(props.data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success === false) {
+          props.setError(data.error);
+          props.setSuccess('');
+        } else if (data.success === true) {
+          props.setSuccess(data.cardURL);
+          props.setError('');
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
-      <div className="form__header" onClick={handleClick} id='collapsableShare'>
+      <div className="form__header" onClick={handleClick} id="collapsableShare">
         <div className="header--text">
           <i className="fas fa-share-alt icon-start"></i>
           <h2 className="header--title">Comparte</h2>
@@ -20,7 +44,10 @@ import { useState } from 'react';
       <fieldset
         className={`profilecards__section--share js_fieldset ${props.share}`}
       >
-        <button className="share__button js_share__button">
+        <button
+          className="share__button js_share__button"
+          onClick={handleShare}
+        >
           <a
             href="./profile-cards.html"
             className="section__container--main-link"
