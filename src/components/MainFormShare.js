@@ -4,7 +4,11 @@ import { useState } from 'react';
 
 const Share = (props) => {
   const handleClick = (ev) => {
+    let hidden = 'hidden';
     props.handleCollapsable(ev.currentTarget.id);
+    if (props.success === true) {
+      hidden = '';
+    }
   };
 
   const handleShare = (ev) => {
@@ -18,8 +22,8 @@ const Share = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data); 
-       if (data.success === false) {
+        console.log(data);
+        if (data.success === false) {
           props.setError(data.error);
           props.setSuccess('');
         } else if (data.success === true) {
@@ -56,18 +60,18 @@ const Share = (props) => {
             <i className="far fa-address-card"></i>Crear tarjeta
           </a>
         </button>
-        <div className="container-creadted-card js_created-card">
+        <div className="container-creadted-card {hidden} ">
           <p className="paragraph-created-card js_share-message">
             La tarjeta ha sido creada
           </p>
           <a
-            className="link-created-card js_link_created"
+            className="link-created-card"
             target="_blank"
-            href="www.twwitter.com"
+            href="www.twitter.com"
           >
             {props.success}
           </a>
-          <button className="button-rrss">
+          <button className="button-rrss {hidden}">
             <i className="fab fa-twitter twitter"></i>Compartir en twitter
           </button>
           {/* Boton de linkedin */}
@@ -76,7 +80,7 @@ const Share = (props) => {
             target="_blank"
             href="www.linkedin.com/"
           >
-            www.linkedin.com//loquesea/lpomnn/lllammnuiv
+            {props.success}
           </a>
           <button className="button-rrss">
             <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
