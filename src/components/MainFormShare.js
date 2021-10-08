@@ -18,7 +18,8 @@ const Share = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success === false) {
+        console.log(data); 
+       if (data.success === false) {
           props.setError(data.error);
           props.setSuccess('');
         } else if (data.success === true) {
@@ -55,7 +56,7 @@ const Share = (props) => {
             <i className="far fa-address-card"></i>Crear tarjeta
           </a>
         </button>
-        <div className="container-creadted-card js_created-card hidden">
+        <div className="container-creadted-card js_created-card">
           <p className="paragraph-created-card js_share-message">
             La tarjeta ha sido creada
           </p>
@@ -64,7 +65,7 @@ const Share = (props) => {
             target="_blank"
             href="www.twwitter.com"
           >
-            www.twwitter.com/loquesea/lpomnn/lllammnuiv
+            {props.success}
           </a>
           <button className="button-rrss">
             <i className="fab fa-twitter twitter"></i>Compartir en twitter

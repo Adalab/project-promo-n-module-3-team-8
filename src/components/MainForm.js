@@ -32,6 +32,11 @@ const Form = (props) => {
         share={props.share}
         arrowShare={props.arrowShare}
         handleCollapsable={props.handleCollapsable}
+        data={props.data}
+        error={props.error}
+        success={props.success}
+        setError = {props.setError}
+        setSuccess={props.setSuccess}
       />
     </form>
   );

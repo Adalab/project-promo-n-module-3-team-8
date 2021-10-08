@@ -73,7 +73,7 @@ const Fill = (props) => {
           className="form__input js_input_mobile"
           placeholder="Ej: 555-55-55-55"
           id="phone"
-          type="tel"
+          type="phone"
           name="phone"
           onChange={props.handleInput}
         />

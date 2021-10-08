@@ -22,16 +22,19 @@ const App = () => {
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
   //Para las paletas
 
   //Para el formulario
   const [data, setData] = useState(
     ls.get('data', {
       palette: '',
-      image: '',
+      photo: '',
       name: '',
       job: '',
-      tel: '',
+      phone: '',
       email: '',
       linkedin: '',
       github: '',
@@ -44,11 +47,11 @@ const App = () => {
       palette: data.palette,
       name: data.name,
       job: data.job,
-      tel: data.tel,
+      phone: data.phone,
       email: data.email,
       linkedin: data.linkedin,
       github: data.github,
-      image: '',
+      photo: data.photo,
     });
     // Este useEffect solo se ejecutará cuando cambie el nombre o el email
     console.log(data);
@@ -59,10 +62,10 @@ const App = () => {
     window.location.reload(true);
     setData({
       palette: '',
-      image: '',
+      photo: '',
       name: '',
       job: '',
-      tel: '',
+      phone: '',
       email: '',
       linkedin: '',
       github: '',
@@ -100,7 +103,7 @@ const App = () => {
 
   const handlePalette = (event) => {
     setPalette(event.target.id);
-    setData({ ...data, palettes: event.target.id });
+    setData({ ...data, palette: event.target.id });
   };
   const handleInput = (event) => {
     const whichIput = event.currentTarget.name;
@@ -114,10 +117,10 @@ const App = () => {
         ...data,
         job: event.currentTarget.value,
       });
-    } else if (whichIput === 'tel') {
+    } else if (whichIput === 'phone') {
       setData({
         ...data,
-        tel: event.currentTarget.value,
+        phone: event.currentTarget.value,
       });
     } else if (whichIput === 'email') {
       setData({
@@ -139,7 +142,15 @@ const App = () => {
 
   const handleImage = (imageData) => {
     setImage(imageData);
-    setData({ ...data, image: imageData });
+    setData({ ...data, photo: imageData });
+  };
+  
+  const handleError = (value) => {
+    setError(value);
+  };
+
+  const handleSuccess = (value) => {
+    setSuccess(value);
   };
 
   return (
@@ -165,6 +176,11 @@ const App = () => {
           handlePalette={handlePalette}
           dataImage={image}
           handleImage={handleImage}
+          error={error}
+          success={success}
+          setError = {handleError}
+          setSuccess={handleSuccess}
+
         />
       </main>
       <Footer />
