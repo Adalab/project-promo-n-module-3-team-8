@@ -1,40 +1,80 @@
-# Proyecto del Modulo 3 realizado por el Grupo 8 
+# Ejercicio de Netflix
 
-Somos un grupo de futuras programadoras entusiasmadas con este nuevo camino que se nos abre gracias al framework de REACT.
+### Cómo arrancar el backend
 
-## El grupo está compuesto por
+En la raíz del proyecto:
 
-  Sheila Arenillas
-  Paloma Lozano
-  Jenny Bienes
-  Irene González
+1. Ejecutar `npm install`.
+1. Ejecutar `npm start` o `npm run dev`.
 
-## Tecnologías usadas
+El backend se arrancará en http://localhost:4000
 
-  Html
-  Scss
-  Java Script
-  React
+### Cómo ejecutar el frontend
 
-## Descripción del proyecto realizado
+En la raíz del proyecto:
 
-  Proyecto en el que debemos refactorizar pasando a React una Web de código heredado en la que las usuarias pueden realizar y compartir una tarjeta de visita digital totalmente personalizable
-  
-### Objetivos
+1. Ejecutar `cd web`.
+1. Ejecutar `npm install`.
+1. Ejecutar `npm start` o `npm run dev`.
+1. Abrir la página http://localhost:3000
 
- - Lidiar con código heredado y ser capaces de refactorizarlo.
- - Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos.
- - Aprender a usar React para crear una aplicación web sencilla.
- - Aprender a buscar información en la documentación de librerías externas.
- - Implementar Scrum como marco de referencia para el desarrollo del producto, basándonos siempre en los valores de Agile como puntos clave del trabajo en equipo y la mejora continua.
- - Mejorar la comunicación entre los miembros del equipo.
- - Mejorar vuestras habilidades de comunicación en público al exponer el proyecto en la sesión final.
+## ¿Cuántos ejercicios hemos hecho?
 
-## Cómo arrancar el proyecto
+Por favor marca a continuación los ejericios que hayais terminado:
 
+4.1 Node JS:
 
+- [x] 1. Crea el proyecto
+- [x] 2. Arranca el backend
+- [x] 3. Arranca el front end
+- [x] 4. Prueba el proyecto
+- [x] 5. Entiende el código del proyecto
 
+  4.2 Express JS I:
 
+- [ ] 1. Pedir todas las películas
+- [ ] 2. Filtrar por género
+- [ ] 3. Ordenar por nombre
 
+  4.3 Express JS II:
 
-*Parte del texto que aquí se expone está redactado por ADALAB
+- [ ] 1. Servidor de estáticos para React
+- [ ] 2. Servidor de estáticos para las fotos
+- [ ] 3. Peticiones POST con body params
+- [ ] 4. Mantener logada a la usuaria
+
+  4.4 Express JS III:
+
+- [ ] 1. Obtener el id de la película a renderizar
+- [ ] 2. Obtener la película
+- [ ] 3. Renderiza una página cualquiera
+- [ ] 4. Renderiza la película
+- [ ] 5. Añade estilos
+
+  4.5 Bases de datos I:
+
+- [ ] 1. Crear la base de datos
+- [ ] 2. Configura la base de datos en Node JS
+- [ ] 3. Haz un SELECT para obtener todas películas
+- [ ] 4. Mejora tu SELECT
+- [ ] 5. SELECT para el motor de plantillas
+- [ ] 6. Crear la tabla de usuarias
+
+  4.6 Bases de datos I:
+
+- [ ] 1. Registro de nuevas usuarias en el front
+- [ ] 2. Registro de nuevas usuarias en el back
+- [ ] 3. Comprueba que no haya una usuaria registrada con el mismo email
+- [ ] 4. Actualiza el perfil de la usuaria en el front
+- [ ] 5. Cctualiza el perfil de la usuaria en el back
+- [ ] 6. Recupera los datos del perfil de la usuaria desde el front
+- [ ] 7. Recupera los datos del perfil de la usuaria desde el back
+
+  4.7 Bases de datos I:
+
+- [ ] 1. Pensar qué relación es
+- [ ] 2. Crear una relación N a N
+- [ ] 3. Crear el endpoint en el front
+- [ ] 4. Crear el endpoint en el back
+- [ ] 5. Obtener los ids de las películas de la usuaria
+- [ ] 6. Obtener todos los datos de las películas de la usuaria

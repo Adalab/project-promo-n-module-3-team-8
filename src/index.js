@@ -1,5 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+const express = require('express');
+const cors = require('cors');
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// create and config server
+const server = express();
+server.use(cors());
+server.use(express.json());
+
+// init express aplication
+const serverPort = 4000;
+server.listen(serverPort, () => {
+    console.log(`Server listening at http://localhost:${serverPort}`);
+});
+//construir un objeto con los valores data.cardURL data.error data.success
+server.post("/card", (req, res) => {
+    const card = {
+        cardURL: "",
+        error: "",
+        success: true
+    }
+    res.json(card)
+})
