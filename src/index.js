@@ -6,6 +6,10 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+//static server
+const serverStaticPath = './public';
+server.use(express.static(serverStaticPath));
+
 // init express aplication
 const serverPort = 4000;
 server.listen(serverPort, () => {
@@ -13,6 +17,7 @@ server.listen(serverPort, () => {
 });
 //construir un objeto con los valores data.cardURL data.error data.success
 server.post("/card", (req, res) => {
+    console.log(req.body);
     const card = {
         cardURL: "",
         error: "",
