@@ -18,19 +18,22 @@ server.listen(serverPort, () => {
 //construir un objeto con los valores data.cardURL data.error data.success
 
 server.post("/card", (req, res) => {
-    const card = {
+    let card = {
         cardURL: "",
         error: "",
         success: true
     }
-    if(req.body.palette !== '' && req.body.photo !== '' && req.body.name !== ''&& req.body.job !== '' && req.body.phone !== '' && req.body.email !== ''&& req.body.linkedin !== '' && req.body.github !== ''){
-        const card = {
+    if (req.body.palette !== '' && req.body.photo !== '' && req.body.name !== '' && req.body.job !== '' && req.body.phone !== '' && req.body.email !== '' && req.body.linkedin !== '' && req.body.github !== '') {
+        card = {
             cardURL: "localhost:4000",
             success: true
-        }} else {const card = {
+        }
+    } else {
+        card = {
             error: "rellena los campos",
             success: false
-    }}
+        }
+    }
     console.log(card)
     res.json(card)
 })
