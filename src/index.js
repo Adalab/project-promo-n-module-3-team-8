@@ -10,6 +10,8 @@ server.use(express.json());
 const serverStaticPath = "./public";
 server.use(express.static(serverStaticPath));
 
+server.use('view engine', 'ejs');
+server.use(express.json({ limit: '10mb' }));
 // init express aplication
 const serverPort = 4000;
 server.listen(serverPort, () => {
@@ -39,7 +41,11 @@ server.post("/card", (req, res) => {
     };
   } else {
     const card = {
+<<<<<<< HEAD
       error: "rellena los campos",
+=======
+      error: 'rellena los campos',
+>>>>>>> 3a838d14d4da1f42b40bf070e02354679fadc312
       success: false,
     };
   }
