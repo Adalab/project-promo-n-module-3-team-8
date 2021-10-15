@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const Database = require('better-sqlite3');
+const db = new Database('./db/database.db', { verbose: console.log });
 
 // create and config server
 const server = express();
@@ -10,7 +12,10 @@ server.use(express.json());
 const serverStaticPath = './public';
 server.use(express.static(serverStaticPath));
 
-server.use('view engine', 'ejs');
+const serverStaticCss = './static';
+server.use(express.static(serverStaticCss));
+
+server.set('view engine', 'ejs');
 server.use(express.json({ limit: '10mb' }));
 // init express aplication
 const serverPort = 4000;
@@ -21,7 +26,8 @@ server.listen(serverPort, () => {
 
 server.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);
-  const data = db.get(req.params.id);
+  const data = query.get(req.params.id);
+
   res.render('cards', data);
 });
 
