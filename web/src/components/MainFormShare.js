@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 //import '../styles/layout/header-collapsable.scss';
 //import '../styles/layout/share.scss';
 
@@ -9,22 +9,22 @@ const Share = (props) => {
 
   const handleShare = (ev) => {
     ev.preventDefault();
-    fetch('//localhost:4000/card', {
-      method: 'POST',
+    fetch("//localhost:4000/card", {
+      method: "POST",
       body: JSON.stringify(props.data),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data); 
-       if (data.success === false) {
+        console.log(data);
+        if (data.success === false) {
           props.setError(data.error);
-          props.setSuccess('');
+          props.setSuccess("");
         } else if (data.success === true) {
           props.setSuccess(data.cardURL);
-          props.setError('');
+          props.setError("");
         }
       })
       .catch((error) => {
