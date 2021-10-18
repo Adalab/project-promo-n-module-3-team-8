@@ -6,7 +6,6 @@ const db = new Database("./db/database.db", { verbose: console.log });
 // create and config server
 const server = express();
 server.use(cors());
-server.use(express.json());
 
 //static server
 const serverStaticPath = "./public";
@@ -32,31 +31,49 @@ server.get("/card/:id", (req, res) => {
 });
 
 server.post("/card", (req, res) => {
-  const card = {
-    cardURL: "",
-    error: "",
-    success: true,
-  };
-  if (
-    req.body.palette !== "" &&
-    req.body.photo !== "" &&
-    req.body.name !== "" &&
-    req.body.job !== "" &&
-    req.body.phone !== "" &&
-    req.body.email !== "" &&
-    req.body.linkedin !== "" &&
-    req.body.github !== ""
-  ) {
-    const card = {
-      cardURL: "localhost:4000",
-      success: true,
-    };
+  const response = {};
+  if (req.body.palette === "") {
+    response.error = "Debe escoger la paleta ";
+    response.success = false;
+  } else if (req.body.name === "") {
+    response.error = "Debe indicar su nombre";
+    response.success = false;
+  } else if (req.body.job === "") {
+    response.error = "Debe indicar su trabajo";
+    response.success = false;
+  } else if (req.body.email === "") {
+    response.error = "Debe indicar su email";
+    response.success = false;
+  } else if (req.body.phone === "") {
+    response.error = "Debe indicar su teléfono";
+    response.success = false;
+  } else if (req.body.photo === "") {
+    response.error = "Debe añadir su foto";
+    response.success = false;
+  } else if (req.body.github === "") {
+    response.error = "Debe indicar su github";
+    response.success = false;
+  } else if (req.body.linkedin === "") {
+    response.error = "Debe indicar su linkedIn";
+    response.success = false;
   } else {
-    const card = {
-      error: "rellena los campos",
-      success: false,
-    };
+    const query = db.prepare(
+      "INSERT INTO cards ( palette, name, job, email,linkedin, github, phone, photo ) VALUES (?,?,?,?,?,?,?,?)"
+    );
+
+    const result = query.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.email,
+      req.body.linkedin,
+      req.body.github,
+      req.body.tel,
+      req.body.image
+    );
+    response.success = true;
+    response.cardURL = `http://localhost:4000/card/${result.lastInsertRowid}`;
   }
-  console.log(card);
-  res.json(card);
+  console.log(response);
+  res.json(response);
 });
