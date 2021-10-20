@@ -19,7 +19,7 @@ server.use(express.json({ limit: "10mb" }));
 // init express aplication
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
-  console.log("server listening at http://localhost:4000");
+  console.log("server listening at http://localhost:3000");
 });
 //construir un objeto con los valores data.cardURL data.error data.success
 
@@ -60,6 +60,7 @@ server.post("/card", (req, res) => {
     const query = db.prepare(
       "INSERT INTO cards ( palette, name, job, email,linkedin, github, phone, photo ) VALUES (?,?,?,?,?,?,?,?)"
     );
+    console.log(req.body.phone);
 
     const result = query.run(
       req.body.palette,
@@ -68,8 +69,8 @@ server.post("/card", (req, res) => {
       req.body.email,
       req.body.linkedin,
       req.body.github,
-      req.body.tel,
-      req.body.image
+      req.body.phone,
+      req.body.photo
     );
     response.success = true;
     response.cardURL = `https://crazyprops.herokuapp.com/card/${result.lastInsertRowid}`;
