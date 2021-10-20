@@ -9,7 +9,7 @@ const Share = (props) => {
 
   const handleShare = (ev) => {
     ev.preventDefault();
-    fetch("/card/", {
+    fetch("http://localhost:4000/card/", {
       method: "POST",
       body: JSON.stringify(props.data),
       headers: {
@@ -60,29 +60,32 @@ const Share = (props) => {
           <p className="paragraph-created-card js_share-message">
             La tarjeta ha sido creada
           </p>
+          <p>
+          {props.success}
+          </p>
+
           <a
-            className="link-created-card js_link_created"
+            className="link-created-card js_link_created button-rrss"
             target="_blank"
-            href="www.twwitter.com"
-          >
-            {props.success}
+            href="https://www.twitter.com"
+          >          
+          Compartir en twitter
           </a>
-          <button className="button-rrss">
-            <i className="fab fa-twitter twitter"></i>Compartir en twitter
-          </button>
-          {/* Boton de linkedin */}
-          <a
-            className="link-created-card js_link_created"
-            target="_blank"
-            href="www.linkedin.com/"
-          >
-            {props.success}
-          </a>
-          <button className="button-rrss">
-            <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
+
+
+        {/* Boton de linkedin */}
+        <a
+          className="link-created-card js_link_created"
+          target="_blank"
+          href="www.linkedin.com"
+        >
+          {props.success}
+        </a>
+        <button className="button-rrss">
+          <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
           </button>
         </div>
-      </fieldset>
+    </fieldset>
     </>
   );
 };
