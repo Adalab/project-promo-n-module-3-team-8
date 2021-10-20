@@ -17,9 +17,8 @@ server.use(express.static(serverStaticCss));
 server.set("view engine", "ejs");
 server.use(express.json({ limit: "10mb" }));
 // init express aplication
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
-  console.log(`Server listening at http://localhost:${serverPort}`);
 });
 //construir un objeto con los valores data.cardURL data.error data.success
 
@@ -72,7 +71,7 @@ server.post("/card", (req, res) => {
       req.body.image
     );
     response.success = true;
-    response.cardURL = `http://localhost:4000/card/${result.lastInsertRowid}`;
+    response.cardURL = `https://crazyprops.herokuapp.com/card/${result.lastInsertRowid}`;
   }
   console.log(response);
   res.json(response);

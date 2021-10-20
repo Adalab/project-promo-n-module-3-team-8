@@ -9,7 +9,7 @@ const Share = (props) => {
 
   const handleShare = (ev) => {
     ev.preventDefault();
-    fetch("//localhost:4000/card", {
+    fetch("/card/", {
       method: "POST",
       body: JSON.stringify(props.data),
       headers: {
@@ -76,7 +76,7 @@ const Share = (props) => {
             target="_blank"
             href="www.linkedin.com/"
           >
-            www.linkedin.com//loquesea/lpomnn/lllammnuiv
+            {props.success}
           </a>
           <button className="button-rrss">
             <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
