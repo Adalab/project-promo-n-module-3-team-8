@@ -1,7 +1,3 @@
-import { useState } from "react";
-//import '../styles/layout/header-collapsable.scss';
-//import '../styles/layout/share.scss';
-
 const Share = (props) => {
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id);
@@ -43,49 +39,48 @@ const Share = (props) => {
       </div>
 
       <fieldset
-        className={`profilecards__section--share js_fieldset ${props.share}`}
+        className={`profilecards__section--share ${props.share}`}
       >
         <button
-          className="share__button js_share__button"
+          className="share__button"
           onClick={handleShare}
         >
           <a
             href="./profile-cards.html"
             className="section__container--main-link"
           >
-            <i className="far fa-address-card"></i>Crear tarjeta
+            <i className="far fa-address-card" />Crear tarjeta
           </a>
         </button>
-        <div className="container-creadted-card js_created-card">
-          <p className="paragraph-created-card js_share-message">
+        <div className="container-creadted-card">
+          <p className="paragraph-created-card ">
             La tarjeta ha sido creada
           </p>
-          <p>
-          {props.success}
+          <p className="link-created-card">
+            <a target="-blank"
+              href={`${props.success}`}>{props.success}</a>
           </p>
-
           <a
-            className="link-created-card js_link_created button-rrss"
-            target="_blank"
+            className="button-rrss"
+            target="-blank"
             href="https://www.twitter.com"
-          >          
-          Compartir en twitter
+          ><i class="fab fa-twitter red" />Compartir en twitter
           </a>
-
-
-        {/* Boton de linkedin */}
-        <a
-          className="link-created-card js_link_created"
-          target="_blank"
-          href="www.linkedin.com"
-        >
-          {props.success}
-        </a>
-        <button className="button-rrss">
-          <i className="fab fa-linkedin-in linkedin"></i>Compartir en LinkeIn
-          </button>
+          {/* Boton de linkedin */}
+          <p className="link-created-card">
+            <a
+              target="-blank"
+              href={`${props.success}`}>{props.success}</a>
+          </p>
+          <a
+            className="button-rrss"
+            target="-blank"
+            href="https://www.linkedin.com"
+          >
+            <i className="fab fa-linkedin-in red" />Compartir en LinkedIn
+          </a>
         </div>
-    </fieldset>
+      </fieldset>
     </>
   );
 };
