@@ -57,24 +57,25 @@ const Share = (props) => {
             La tarjeta ha sido creada
           </p>
           <p className="link-created-card">
-            <a target="-blank"
+            <a
+              target="_blank"
               href={`${props.success}`}>{props.success}</a>
           </p>
           <a
             className="button-rrss"
-            target="-blank"
+            target="_blank"
             href="https://www.twitter.com"
           ><i class="fab fa-twitter red" />Compartir en twitter
           </a>
           {/* Boton de linkedin */}
           <p className="link-created-card">
             <a
-              target="-blank"
+              target="_blank"
               href={`${props.success}`}>{props.success}</a>
           </p>
           <a
             className="button-rrss"
-            target="-blank"
+            target="_blank"
             href="https://www.linkedin.com"
           >
             <i className="fab fa-linkedin-in red" />Compartir en LinkedIn

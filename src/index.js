@@ -19,7 +19,7 @@ server.use(express.json({ limit: "10mb" }));
 // init express aplication
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
-  console.log("server listening at http://localhost:3000");
+  console.log("server listening at http://localhost:4000");
 });
 //construir un objeto con los valores data.cardURL data.error data.success
 
